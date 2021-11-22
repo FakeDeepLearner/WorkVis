@@ -1,3 +1,3 @@
 import pandas
-import plotly
+import matplotlib
 import tkinter
