@@ -1,0 +1,4 @@
+Do part 1 (Should be simple enough).
+Calculate the differences of the yearly averages of working hours.
+Make the necessary dataframes to be rendered with the interactive panel.
+
