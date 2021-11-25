@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plot
 import pandas as p
 
-during_pandemic_data = p.read_csv('Datasets/during_the_pandemic (1).csv')
-pre_pandemic_data = p.read_csv('Datasets/pre_pandemic.csv')
+during_pandemic_data = p.read_csv('during_the_pandemic (1).csv')
+pre_pandemic_data = p.read_csv('pre_pandemic.csv')
 industry_and_its_index = {'Agriculture': 0,
                           'Forestry, fishing, mining, quarrying, oil and gas': 1,
                           'Construction': 2,
