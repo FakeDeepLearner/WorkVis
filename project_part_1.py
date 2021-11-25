@@ -47,7 +47,6 @@ def plotting_the_graph(industry: str) -> None:
     plot.show()
 
 
-
 def points_of_pre_pandemic(industry: str) -> list[tuple[int, int]]:
     """Returns the point of the dataset based on each industry
 
