@@ -90,4 +90,3 @@ def points_of_during_pandemic(industry: str) -> list[tuple[int, int]]:
     return during_pandemic_points
 
 
-plotting_the_graph("Agriculture")
