@@ -39,8 +39,8 @@ def plotting_the_graph(industry: str) -> None:
     min_y_axis = int(round(min(during_pandemic_stat_axis + pre_pandemic_stat_axis) / 5) * 5)
 
     figure, graphs = plot.subplots(2)
-    graphs[1].set_title(industry + "'s Average Working Hour During the Pandemic")
-    graphs[0].set_title(industry + "'s Average Working Hour Before the Pandemic")
+    graphs[1].set_title(industry + "'s Average Working Hour During the Pandemic (2020)")
+    graphs[0].set_title(industry + "'s Average Working Hour Before the Pandemic (2019)")
 
     graphs[0].plot(pre_pandemic_time_axis, pre_pandemic_stat_axis, color='red', marker='o')
     graphs[1].plot(during_pandemic_time_axis, during_pandemic_stat_axis, color='blue', marker='o')
