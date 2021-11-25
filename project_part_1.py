@@ -25,6 +25,7 @@ def plotting_the_graph(industry: str) -> None:
     pre_pandemic_stat_axis = []
     during_pandemic_time_axis = []
     during_pandemic_stat_axis = []
+
     for points in pre_pandemic_points:
         time, stat = points
         pre_pandemic_time_axis.append(time)
@@ -33,6 +34,10 @@ def plotting_the_graph(industry: str) -> None:
         time, stat = points
         during_pandemic_time_axis.append(time)
         during_pandemic_stat_axis.append(stat)
+
+    max_y_axis = int(round(max(during_pandemic_stat_axis + pre_pandemic_stat_axis) / 5) * 5)
+    min_y_axis = int(round(min(during_pandemic_stat_axis + pre_pandemic_stat_axis) / 5) * 5)
+
     figure, graphs = plot.subplots(2)
     graphs[1].set_title(industry + "'s Average Working Hour During the Pandemic")
     graphs[0].set_title(industry + "'s Average Working Hour Before the Pandemic")
@@ -40,10 +45,12 @@ def plotting_the_graph(industry: str) -> None:
     graphs[0].plot(pre_pandemic_time_axis, pre_pandemic_stat_axis, color='red', marker='o')
     graphs[1].plot(during_pandemic_time_axis, during_pandemic_stat_axis, color='blue', marker='o')
 
-    plot.ylabel('Average Working Hours')
-    plot.xlabel('Month')
-    figure.set_size_inches(10, 7)
-    plot.ylim([25, 50])
+    plot.setp(graphs[0], ylabel='Average Working Hours',
+              xlabel='Month', ylim=(min_y_axis - 5, max_y_axis + 5))
+    plot.setp(graphs[1], ylabel='Average Working Hours',
+              xlabel='Month', ylim=(min_y_axis - 5, max_y_axis + 5))
+    figure.set_size_inches(16, 10)
+
     plot.show()
 
 
