@@ -41,16 +41,9 @@ def plotting_the_graph(industry: str) -> None:
     graphs[0].plot(pre_pandemic_time_axis, pre_pandemic_stat_axis, color='red', marker='o')
     graphs[1].plot(during_pandemic_time_axis, during_pandemic_stat_axis, color='blue', marker='o')
 
-    plot.ylim(20, 50)
-
-    graphs[0].ylabel('Average Working Hours')
-    graphs[1].ylabel('Average Working Hours')
-
-    graphs[0].xlabel('Month')
-    graphs[1].xlabel('Month')
-
-    figure.set_size_inches(18.5, 10.5)  # doesn't work (trying to set size for the figure so
-    # it isn't so small at the beginning)
+    plot.ylabel('Average Working Hours')
+    plot.xlabel('Month')
+    figure.set_size_inches(16, 10)
 
     plot.show()
 
