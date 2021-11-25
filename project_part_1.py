@@ -80,3 +80,5 @@ def points_of_during_pandemic(industry: str) -> list[tuple[int, int]]:
         during_pandemic_points.append((month, during_pandemic[month]))
 
     return during_pandemic_points
+
+
