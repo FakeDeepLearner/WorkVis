@@ -1,11 +1,10 @@
 import matplotlib as mp
 import matplotlib.pyplot as plot
-import tkinter as tk
+import matplotlib.figure as fig
 import pandas as p
 
-
-during_pandemic_data = p.read_csv('Datasets/during_the_pandemic (1).csv')
-pre_pandemic_data = p.read_csv('Datasets/pre_pandemic.csv')
+during_pandemic_data = p.read_csv('during_the_pandemic (1).csv')
+pre_pandemic_data = p.read_csv('pre_pandemic.csv')
 industry_and_its_index = {'Agriculture': 0,
                           'Forestry, fishing, mining, quarrying, oil and gas': 1,
                           'Construction': 2,
@@ -38,16 +37,21 @@ def plotting_the_graph(industry: str) -> None:
     figure, graphs = plot.subplots(2)
     graphs[1].set_title(industry + "'s Average Working Hour During the Pandemic")
     graphs[0].set_title(industry + "'s Average Working Hour Before the Pandemic")
-    graphs[0].plot(pre_pandemic_time_axis, pre_pandemic_stat_axis, 'red')
-    graphs[1].plot(during_pandemic_time_axis, during_pandemic_stat_axis, 'blue')
+
+    graphs[0].plot(pre_pandemic_time_axis, pre_pandemic_stat_axis, color='red', marker='o')
+    graphs[1].plot(during_pandemic_time_axis, during_pandemic_stat_axis, color='blue', marker='o')
+
+    plot.ylim(20, 50)
+
     graphs[0].ylabel('Average Working Hours')
     graphs[1].ylabel('Average Working Hours')
+
     graphs[0].xlabel('Month')
     graphs[1].xlabel('Month')
 
+    figure.set_size_inches(18.5, 10.5)  # doesn't work (trying to set size for the figure so
+                                        # it isn't so small at the beginning)
 
-
-    figure.tight_layout()
     plot.show()
 
 
