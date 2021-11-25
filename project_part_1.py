@@ -1,6 +1,6 @@
 import matplotlib as mp
 import matplotlib.pyplot as plot
-import tkinter as tk
+import matplotlib.figure as fig
 import pandas as p
 
 during_pandemic_data = p.read_csv('during_the_pandemic (1).csv')
@@ -37,14 +37,22 @@ def plotting_the_graph(industry: str) -> None:
     figure, graphs = plot.subplots(2)
     graphs[1].set_title(industry + "'s Average Working Hour During the Pandemic")
     graphs[0].set_title(industry + "'s Average Working Hour Before the Pandemic")
+
     graphs[0].plot(pre_pandemic_time_axis, pre_pandemic_stat_axis, 'red')
     graphs[1].plot(during_pandemic_time_axis, during_pandemic_stat_axis, 'blue')
+
     graphs[0].yticks(pre_pandemic_stat_axis)
-    graphs[1].yticks(during_pandemic_stat_axis)
+    graphs[1].yticks(during_pandemic_stat_axis)  # doesn't work for some reason
+                                                 
+
     graphs[0].ylabel('Average Working Hours')
     graphs[1].ylabel('Average Working Hours')
+
     graphs[0].xlabel('Month')
     graphs[1].xlabel('Month')
+
+    figure.set_size_inches(18.5, 10.5)  # doesn't work (trying to set size for the figure so
+                                        # it isn't so small at the beginning)
     plot.show()
 
 
@@ -75,4 +83,3 @@ def points_of_during_pandemic(industry: str) -> list[tuple[int, int]]:
         during_pandemic_points.append((month, during_pandemic[month]))
 
     return during_pandemic_points
-
