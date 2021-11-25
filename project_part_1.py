@@ -53,10 +53,9 @@ def plotting_the_graph(industry: str) -> None:
     graphs[0].plot(pre_pandemic_time_axis, pre_pandemic_stat_axis, color='red', marker='o')
     graphs[1].plot(during_pandemic_time_axis, during_pandemic_stat_axis, color='blue', marker='o')
 
-    plot.setp(graphs[0], ylabel='Average Working Hours',
+    plot.setp(graphs, ylabel='Average Working Hours',
               xlabel='Month', ylim=(int(min_y_axis - 5), int(max_y_axis + 5)))
-    plot.setp(graphs[1], ylabel='Average Working Hours',
-              xlabel='Month', ylim=(int(min_y_axis - 5), int(max_y_axis + 5)))
+
     figure.set_size_inches(16, 10)
 
     plot.show()
