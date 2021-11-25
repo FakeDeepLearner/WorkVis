@@ -5,6 +5,7 @@ import project_part_1
 matplotlib.use("TkAgg")
 from tkinter import *
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
+from matplotlib.figure import Figure
 import project_part_1 as proj1
 
 root = Tk()
