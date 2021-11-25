@@ -25,6 +25,15 @@ def plotting_the_graph(industry: str) -> None:
     during_pandemic_time_axis = []
     during_pandemic_stat_axis = []
 
+    industry_name = industry.split(' ')
+    industry_name_fixed = [industry_name[0]]
+    for i in range(len(industry_name)):
+        if industry_name[i][0].islower():
+            industry_name_fixed.append(industry_name[i].replace(industry_name[i][0],
+                                                                industry_name[i][0].capitalize(), 1))
+
+    new_industry_name = ' '.join(industry_name_fixed)
+
     for points in pre_pandemic_points:
         time, stat = points
         pre_pandemic_time_axis.append(time)
@@ -38,8 +47,8 @@ def plotting_the_graph(industry: str) -> None:
     min_y_axis = int(round(min(during_pandemic_stat_axis + pre_pandemic_stat_axis) / 5) * 5)
 
     figure, graphs = plot.subplots(2)
-    graphs[1].set_title(industry + "'s Average Working Hour During the Pandemic (2020)")
-    graphs[0].set_title(industry + "'s Average Working Hour Before the Pandemic (2019)")
+    graphs[1].set_title(new_industry_name + "'s Average Working Hour During the Pandemic (2020)")
+    graphs[0].set_title(new_industry_name + "'s Average Working Hour Before the Pandemic (2019)")
 
     graphs[0].plot(pre_pandemic_time_axis, pre_pandemic_stat_axis, color='red', marker='o')
     graphs[1].plot(during_pandemic_time_axis, during_pandemic_stat_axis, color='blue', marker='o')
