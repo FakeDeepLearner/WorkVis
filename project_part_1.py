@@ -1,6 +1,4 @@
-import matplotlib as mp
 import matplotlib.pyplot as plot
-import matplotlib.figure as fig
 import pandas as p
 
 during_pandemic_data = p.read_csv('during_the_pandemic (1).csv')
@@ -49,8 +47,7 @@ def plotting_the_graph(industry: str) -> None:
     graphs[0].xlabel('Month')
     graphs[1].xlabel('Month')
 
-    figure.set_size_inches(18.5, 10.5)  # doesn't work (trying to set size for the figure so
-    # it isn't so small at the beginning)
+    figure.set_size_inches(18.5, 10.5)
 
     plot.show()
 
