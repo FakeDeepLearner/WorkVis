@@ -50,7 +50,7 @@ def plotting_the_graph(industry: str) -> None:
     graphs[1].xlabel('Month')
 
     figure.set_size_inches(18.5, 10.5)  # doesn't work (trying to set size for the figure so
-                                        # it isn't so small at the beginning)
+    # it isn't so small at the beginning)
 
     plot.show()
 
