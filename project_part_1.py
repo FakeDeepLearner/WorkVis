@@ -14,7 +14,6 @@ industry_and_its_index = {'Agriculture': 0,
                           'Accommodation and food services': 7,
                           'Public administration': 8}
 
-win = Tk()
 def plotting_the_graph(industry: str) -> None:
     """plots the graph based on the industry chosen"""
 
