@@ -3,9 +3,8 @@ import matplotlib.pyplot as plot
 import tkinter as tk
 import pandas as p
 
-
-during_pandemic_data = p.read_csv('Datasets/during_the_pandemic (1).csv')
-pre_pandemic_data = p.read_csv('Datasets/pre_pandemic.csv')
+during_pandemic_data = p.read_csv('during_the_pandemic (1).csv')
+pre_pandemic_data = p.read_csv('pre_pandemic.csv')
 industry_and_its_index = {'Agriculture': 0,
                           'Forestry, fishing, mining, quarrying, oil and gas': 1,
                           'Construction': 2,
@@ -40,14 +39,12 @@ def plotting_the_graph(industry: str) -> None:
     graphs[0].set_title(industry + "'s Average Working Hour Before the Pandemic")
     graphs[0].plot(pre_pandemic_time_axis, pre_pandemic_stat_axis, 'red')
     graphs[1].plot(during_pandemic_time_axis, during_pandemic_stat_axis, 'blue')
+    graphs[0].yticks(pre_pandemic_stat_axis)
+    graphs[1].yticks(during_pandemic_stat_axis)
     graphs[0].ylabel('Average Working Hours')
     graphs[1].ylabel('Average Working Hours')
     graphs[0].xlabel('Month')
     graphs[1].xlabel('Month')
-
-
-
-    figure.tight_layout()
     plot.show()
 
 
@@ -78,3 +75,4 @@ def points_of_during_pandemic(industry: str) -> list[tuple[int, int]]:
         during_pandemic_points.append((month, during_pandemic[month]))
 
     return during_pandemic_points
+
