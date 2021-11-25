@@ -38,12 +38,11 @@ def plotting_the_graph(industry: str) -> None:
     graphs[1].set_title(industry + "'s Average Working Hour During the Pandemic")
     graphs[0].set_title(industry + "'s Average Working Hour Before the Pandemic")
 
-    graphs[0].plot(pre_pandemic_time_axis, pre_pandemic_stat_axis, 'red')
-    graphs[1].plot(during_pandemic_time_axis, during_pandemic_stat_axis, 'blue')
+    graphs[0].plot(pre_pandemic_time_axis, pre_pandemic_stat_axis, color='red', marker='o')
+    graphs[1].plot(during_pandemic_time_axis, during_pandemic_stat_axis, color='blue', marker='o')
 
-    graphs[0].yticks(pre_pandemic_stat_axis)
-    graphs[1].yticks(during_pandemic_stat_axis)  # doesn't work for some reason
-                                                 
+    graphs[1].ylim(20, 50)
+    graphs[0].ylim(20, 50)
 
     graphs[0].ylabel('Average Working Hours')
     graphs[1].ylabel('Average Working Hours')
@@ -53,6 +52,8 @@ def plotting_the_graph(industry: str) -> None:
 
     figure.set_size_inches(18.5, 10.5)  # doesn't work (trying to set size for the figure so
                                         # it isn't so small at the beginning)
+
+
     plot.show()
 
 
@@ -83,3 +84,4 @@ def points_of_during_pandemic(industry: str) -> list[tuple[int, int]]:
         during_pandemic_points.append((month, during_pandemic[month]))
 
     return during_pandemic_points
+
