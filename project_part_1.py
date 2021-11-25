@@ -1,7 +1,6 @@
 import matplotlib as mp
 import matplotlib.pyplot as plot
 import pandas as p
-from tkinter import *
 during_pandemic_data = p.read_csv('Datasets/during_the_pandemic (1).csv')
 pre_pandemic_data = p.read_csv('Datasets/pre_pandemic.csv')
 industry_and_its_index = {'Agriculture': 0,
@@ -85,34 +84,3 @@ def points_of_during_pandemic(industry: str) -> list[tuple[int, int]]:
 
 
 
-root = Tk()
-
-
-my_button = Button(root, text = "Agriculture", command= plotting_the_graph("Agriculture"), padx= 40, pady=1)
-my_button.grid(row = 0, column= 0)
-
-my_button1 = Button(root, text = "FFMQOG", command= plotting_the_graph('Forestry, fishing, mining, quarrying, oil and gas'), padx= 40, pady=1)
-my_button1.grid(row = 0, column= 1)
-
-my_button2 = Button(root, text = "Construction", command= plotting_the_graph('Construction'), padx= 40, pady=1)
-my_button2.grid(row = 0, column= 2)
-
-my_button3 = Button(root, text = "Wholesale and retail", command= plotting_the_graph('Wholesale and retail trade'), padx= 40, pady=1)
-my_button3.grid(row = 0, column= 3)
-
-my_button4 = Button(root, text = "Transportation", command= plotting_the_graph('Transportation and warehousing'), padx= 40, pady=1)
-my_button4.grid(row = 0, column= 4)
-
-my_button5 = Button(root, text = "Education", command= plotting_the_graph('Educational services'), padx= 40, pady=1)
-my_button5.grid(row = 0, column= 5)
-
-my_button6 = Button(root, text = "HC & SA", command= plotting_the_graph('Health care and social assistance'), padx= 40, pady=1)
-my_button6.grid(row = 0, column= 6)
-
-my_button7 = Button(root, text = "A & Food Services", command= plotting_the_graph('Accommodation and food services'), padx= 40, pady=1)
-my_button7.grid(row = 0, column= 7)
-
-my_button8 = Button(root, text = "Public administration", command= plotting_the_graph('Public administration'), padx= 40, pady=1)
-my_button8.grid(row = 0, column= 8)
-
-root.mainloop()
