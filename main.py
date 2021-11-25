@@ -1,5 +1,7 @@
 import pandas
 import matplotlib
-import tkinter
+from tkinter import *
 import project_part_1
+
+
 
