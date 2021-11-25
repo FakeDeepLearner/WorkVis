@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plot
 import pandas as p
 
-during_pandemic_data = p.read_csv('during_the_pandemic (1).csv')
-pre_pandemic_data = p.read_csv('pre_pandemic.csv')
+during_pandemic_data = p.read_csv('Datasets/during_the_pandemic (1).csv')
+pre_pandemic_data = p.read_csv('Datasets/pre_pandemic.csv')
 industry_and_its_index = {'Agriculture': 0,
                           'Forestry, fishing, mining, quarrying, oil and gas': 1,
                           'Construction': 2,
@@ -90,3 +90,4 @@ def points_of_during_pandemic(industry: str) -> list[tuple[int, int]]:
     return during_pandemic_points
 
 
+plotting_the_graph("Agriculture")
