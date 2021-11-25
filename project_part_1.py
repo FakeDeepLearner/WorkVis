@@ -1,6 +1,5 @@
 import matplotlib as mp
 import matplotlib.pyplot as plot
-import matplotlib.figure as fig
 import pandas as p
 
 during_pandemic_data = p.read_csv('Datasets/during_the_pandemic (1).csv')
@@ -15,7 +14,7 @@ industry_and_its_index = {'Agriculture': 0,
                           'Accommodation and food services': 7,
                           'Public administration': 8}
 
-
+win = Tk()
 def plotting_the_graph(industry: str) -> None:
     """plots the graph based on the industry chosen"""
 
@@ -43,9 +42,10 @@ def plotting_the_graph(industry: str) -> None:
 
     plot.ylabel('Average Working Hours')
     plot.xlabel('Month')
-    figure.set_size_inches(16, 10)
-
+    figure.set_size_inches(10, 7)
+    plot.ylim([25, 50])
     plot.show()
+
 
 
 def points_of_pre_pandemic(industry: str) -> list[tuple[int, int]]:
