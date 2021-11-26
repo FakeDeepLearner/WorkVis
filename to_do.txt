@@ -11,7 +11,7 @@ Eren: Configure the tkinter window to display the buttons.  (Until tonight, or t
 (Deadline to be determined) Test if the graphs work. Document the module(s)
 Thomas : Make the necessary line graphs to be displayed when the buttons are pressed.  (Until friday night.)
 Khizer: Help Thomas. (for now.) I can assign you additional tasks tomorrow if you want.
-Sheldon: Show a sign of life. 
+Sheldon: Work on Part 2
 
 ###
 
