@@ -30,7 +30,7 @@ def plotting_the_graph(industry: str) -> None:
     for i in range(len(industry_name)):
         if industry_name[i][0].islower():
             industry_name_fixed.append(industry_name[i].replace(industry_name[i][0],
-                                        industry_name[i][0].capitalize(), 1))
+                                       industry_name[i][0].capitalize(), 1))
 
     new_industry_name = ' '.join(industry_name_fixed)
 
@@ -88,5 +88,3 @@ def points_of_during_pandemic(industry: str) -> list[tuple[int, int]]:
         during_pandemic_points.append((month, during_pandemic[month]))
 
     return during_pandemic_points
-
-
