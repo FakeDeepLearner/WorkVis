@@ -1,6 +1,12 @@
 import pandas
 import matplotlib
+matplotlib.use('TkAgg')
 from tkinter import *
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
+from matplotlib.backend_bases import key_press_handler
+from matplotlib.figure import Figure
+import matplotlib.pyplot as plt
+import numpy as np
 import project_part_1 as proj1
 import project_part_2 as proj2
 
@@ -8,6 +14,7 @@ import project_part_2 as proj2
 ########
 #Part 1
 ########
+
 
 def Display(industry: str) -> None:
     """
@@ -18,10 +25,12 @@ def Display(industry: str) -> None:
     
 root = Tk()
 root.overrideredirect(True)
-root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))
+root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))  #Displays the window in full screen
 
-button_of_agriculture = Button(root, text = "Agriculture", command= lambda: Display("Agriculture"), padx= 25)
-button_of_agriculture.grid(row=0 , column= 0)
+#Buttons:
+
+button_of_agriculture = Button(root, text = "Agriculture", command= lambda: Display("Agriculture"), padx= 25)    
+button_of_agriculture.grid(row=0 , column= 0)     #Placing the buttons on the screen
 
 button_of_FFMQOG = Button(root, text = "FFMQOG", command= lambda: Display("Forestry, fishing, mining, quarrying, oil and gas"), padx= 25)
 button_of_FFMQOG.grid(row=0 , column= 1)
@@ -47,7 +56,7 @@ button_of_accomodation_and_food.grid(row=0 , column= 7)
 button_of_public_administration = Button(root, text = "Public administration", command= lambda: Display("Public administration"), padx= 25)
 button_of_public_administration.grid(row=0 , column= 8)
 
-quit_button = Button(root, text = "Close the program", command= root.destroy)
+quit_button = Button(root, text = "Close the program", command= root.destroy)  #The quit button 
 quit_button.grid(row= 10, column= 4)
 
 root.mainloop()
