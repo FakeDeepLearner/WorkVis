@@ -16,8 +16,9 @@ def Display(industry: str) -> None:
     proj1.plotting_the_graph(industry)
     
     
-
 root = Tk()
+root.overrideredirect(True)
+root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))
 
 button_of_agriculture = Button(root, text = "Agriculture", command= lambda: Display("Agriculture"), padx= 25)
 button_of_agriculture.grid(row=0 , column= 0)
@@ -48,5 +49,5 @@ button_of_public_administration.grid(row=0 , column= 8)
 
 quit_button = Button(root, text = "Close the program", command= root.destroy)
 quit_button.grid(row= 10, column= 4)
-    
+
 root.mainloop()
