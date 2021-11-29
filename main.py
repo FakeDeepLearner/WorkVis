@@ -65,26 +65,24 @@ quit_button = Button(frame, text = "Close the program", command= root.destroy)  
 quit_button.grid(row= 10, column= 4)
 
 
-def Display(industry: str) -> None:
+def Display(industry: str) -> None:    
     """
     Display the graph of the industry on the user panel.
     """
     global canvas, bottomframe
 
-    if canvas != None:
+    if canvas != None:        #Removing the existing graph (if there is any)
         bottomframe.destroy()
         canvas.get_tk_widget().destroy()
         bottomframe = Frame(root)
         bottomframe.pack(side=BOTTOM)
 
 
-    figure = proj1.plotting_the_graph(industry)
+    #Generating the figure and a canvas to display it
+    figure = proj1.plotting_the_graph(industry)   
     canvas = FigureCanvasTkAgg(figure, master=bottomframe)
 
-    canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=True)
-
-
-
+    canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=True)  #Displaying the figure
 
 
 root.mainloop()
