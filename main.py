@@ -29,6 +29,8 @@ frame.pack()
 bottomframe = Frame(root)
 bottomframe.pack(side=BOTTOM)
 
+canvas = None
+figure = None
 
 #Buttons:
 
@@ -67,9 +69,22 @@ def Display(industry: str) -> None:
     """
     Display the graph of the industry on the user panel.
     """
+    global canvas, bottomframe
+
+    if canvas != None:
+        bottomframe.destroy()
+        canvas.get_tk_widget().destroy()
+        bottomframe = Frame(root)
+        bottomframe.pack(side=BOTTOM)
+
+
     figure = proj1.plotting_the_graph(industry)
-    canvas = FigureCanvasTkAgg(figure, bottomframe)
+    canvas = FigureCanvasTkAgg(figure, master=bottomframe)
+
     canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=True)
+
+
+
 
 
 root.mainloop()
