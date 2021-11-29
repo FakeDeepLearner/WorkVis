@@ -10,7 +10,6 @@ This module contains all the necessary code to implement the first part of the p
 """
 import matplotlib.pyplot as plot
 import pandas as p
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from matplotlib.figure import Figure
 
 during_pandemic_data = p.read_csv('Datasets/during_the_pandemic (1).csv')
