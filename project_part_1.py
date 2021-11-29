@@ -121,6 +121,7 @@ def points_of_during_pandemic(industry: str) -> list[tuple[int, int]]:
     during_pandemic = during_pandemic_data.loc[index].to_dict()
     keys = list(during_pandemic.keys())
     during_pandemic_points = []
+
     for month in keys[1:13]:
         during_pandemic_points.append((month, during_pandemic[month]))
 
