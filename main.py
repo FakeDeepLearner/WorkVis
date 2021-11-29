@@ -16,7 +16,8 @@ matplotlib.use('TkAgg')
 ########
 root = Tk()
 root.overrideredirect(True)
-root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))  # Displays the window in full screen
+root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))
+# Displays the window in full screen
 
 frame = Frame(root)
 frame.pack()
@@ -57,7 +58,7 @@ button_of_health_care.grid(row=0, column=6)
 
 button_of_accomodation_and_food = Button(frame, text="Accomodation and food services", command=lambda:
                                          Display("Accommodation and food services"), padx=25)
-button_of_accomodation_and_food.grid(row=0, column= 7)
+button_of_accomodation_and_food.grid(row=0, column=7)
 
 button_of_public_administration = Button(frame, text="Public administration", command=lambda:
                                          Display("Public administration"), padx=25)
