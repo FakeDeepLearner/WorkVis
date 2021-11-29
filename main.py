@@ -66,7 +66,7 @@ def Display(industry: str) -> None:
     """
     global canvas, bottomframe
 
-    if canvas != None:        #Removing the existing graph (if there is any)
+    if canvas:        #Removing the existing graph (if there is any)
         bottomframe.destroy()
         canvas.get_tk_widget().destroy()
         bottomframe = Frame(root)
