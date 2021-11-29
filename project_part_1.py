@@ -1,3 +1,11 @@
+""" project_part_1.py - Plotting the Graph
+
+The purpose here is to plot the graph according to the selected industry regarding the data
+from before the pandemic (2019) and during the pandemic (2020) the two year will correspond
+to 2 different graphs and the x-axis will represent the average working hour while the y-axis
+will be representing in the form of year and month.
+
+"""
 import matplotlib.pyplot as plot
 import pandas as p
 
@@ -18,7 +26,13 @@ industry_and_its_index = {'Agriculture': 0,
 
 
 def plotting_the_graph(industry: str) -> None:
-    """plots the graph based on the industry chosen"""
+    """plots the graph based on the industry chosen
+    for aesthetic purposes, in the function, the name will be changed so that all word will
+    capitalize their first letter.
+
+    E.g: 'Educational services' -> 'Educational Services'
+
+    """
 
     pre_pandemic_points = points_of_pre_pandemic(industry)
     during_pandemic_points = points_of_during_pandemic(industry)
@@ -27,12 +41,16 @@ def plotting_the_graph(industry: str) -> None:
 
     industry_name = industry.split(' ')
     industry_name_fixed = [industry_name[0]]
-    # Accumulator for the new industry name so that the first alphabet of each word is capitalized.
+    # Accumulator for the new industry name so that the first alphabet of each word is capitalized,
+    # index 0 doesn't count because its first letter is capitalized by default.
 
-    for i in range(len(industry_name)):
-        if industry_name[i][0].islower():
+    for i in range(1, len(industry_name)):
+        if industry_name[i][0].islower() and industry_name[i] != 'and':
             industry_name_fixed.append(industry_name[i].replace(industry_name[i][0],
                                        industry_name[i][0].capitalize(), 1))
+        else:
+            industry_name_fixed.append(industry_name[i])
+
     # If the first alphabet of the word is lower cased then change it to upper case,
     # the first word of the industry should always have an uppercase letter
 
@@ -61,8 +79,8 @@ def plotting_the_graph(industry: str) -> None:
     figure, graphs = plot.subplots(2)
     # Declaring that there will be 2 different graphs.
 
-    graphs[1].set_title(new_industry_name + "'s Average Working Hour During the Pandemic (2020)")
     graphs[0].set_title(new_industry_name + "'s Average Working Hour Before the Pandemic (2019)")
+    graphs[1].set_title(new_industry_name + "'s Average Working Hour During the Pandemic (2020)")
     # Creating the titles for the 2 graphs.
 
     graphs[0].plot(pre_pandemic_time_axis, pre_pandemic_stat_axis, color='red', marker='o')
@@ -81,8 +99,8 @@ def plotting_the_graph(industry: str) -> None:
 
 
 def points_of_pre_pandemic(industry: str) -> list[tuple[int, int]]:
-    """Returns the point of the dataset based on each industry
-
+    """Returns the list of point from the dataset based on the chosen industry
+        based on the average working hour and month before the pandemic
     """
     index = industry_and_its_index[industry]
     before_pandemic = pre_pandemic_data.loc[index].to_dict()
@@ -96,8 +114,8 @@ def points_of_pre_pandemic(industry: str) -> list[tuple[int, int]]:
 
 
 def points_of_during_pandemic(industry: str) -> list[tuple[int, int]]:
-    """Returns the point of the dataset based on each industry
-
+    """Returns the list of point from the dataset based on the chosen industry
+        based on the average working hour and month during the pandemic
     """
     index = industry_and_its_index[industry]
     during_pandemic = during_pandemic_data.loc[index].to_dict()
