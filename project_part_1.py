@@ -6,7 +6,7 @@ to 2 different graphs and the x-axis will represent the average working hour whi
 will be representing in the form of year and month.
 
 """
-import tkinter
+from tkinter import *
 
 import matplotlib.pyplot as plot
 import pandas as p
