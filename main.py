@@ -1,3 +1,7 @@
+"""
+A module that contains the code to run the project
+"""
+
 import pandas
 import matplotlib
 matplotlib.use('TkAgg')
