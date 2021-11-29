@@ -2,11 +2,7 @@ import pandas
 import matplotlib
 matplotlib.use('TkAgg')
 from tkinter import *
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
-from matplotlib.backend_bases import key_press_handler
-from matplotlib.figure import Figure
-import matplotlib.pyplot as plt
-import numpy as np
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import project_part_1 as proj1
 import project_part_2 as proj2
 
@@ -14,11 +10,6 @@ import project_part_2 as proj2
 ########
 #Part 1
 ########
-
-
-
-    
-    
 root = Tk()
 root.overrideredirect(True)
 root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))  #Displays the window in full screen
