@@ -6,8 +6,12 @@ to 2 different graphs and the x-axis will represent the average working hour whi
 will be representing in the form of year and month.
 
 """
+import tkinter
+
 import matplotlib.pyplot as plot
 import pandas as p
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
+from matplotlib.figure import Figure
 
 during_pandemic_data = p.read_csv('Datasets/during_the_pandemic (1).csv')
 pre_pandemic_data = p.read_csv('Datasets/pre_pandemic.csv')
@@ -25,7 +29,7 @@ industry_and_its_index = {'Agriculture': 0,
 # A dictionary so that each industry is connected to the following data set from the DataFrame.
 
 
-def plotting_the_graph(industry: str) -> None:
+def plotting_the_graph(industry: str) -> Figure:
     """plots the graph based on the industry chosen
     for aesthetic purposes, in the function, the name will be changed so that all word will
     capitalize their first letter.
@@ -94,8 +98,10 @@ def plotting_the_graph(industry: str) -> None:
     figure.set_size_inches(16, 10)
     # Setting the window size so it isn't too small.
 
-    plot.show()
+    return figure
+
     # Open the window
+
 
 
 def points_of_pre_pandemic(industry: str) -> list[tuple[int, int]]:
