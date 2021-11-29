@@ -81,6 +81,7 @@ def plotting_the_graph(industry: str) -> Figure:
     # Simple algorithm that creates the min/max of y-axis based on the multiple of 5.
 
     figure, graphs = plot.subplots(2)
+
     # Declaring that there will be 2 different graphs.
 
     graphs[0].set_title(new_industry_name + "'s Average Working Hour Before the Pandemic (2019)")
@@ -97,6 +98,8 @@ def plotting_the_graph(industry: str) -> Figure:
 
     figure.set_size_inches(16, 10)
     # Setting the window size so it isn't too small.
+    plot.close('all')
+
 
     return figure
 
