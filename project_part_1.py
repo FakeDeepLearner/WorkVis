@@ -10,7 +10,6 @@ This module contains all the necessary code to implement the first part of the p
 """
 import matplotlib.pyplot as plot
 import pandas as p
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from matplotlib.figure import Figure
 
 during_pandemic_data = p.read_csv('Datasets/during_the_pandemic (1).csv')
@@ -81,6 +80,7 @@ def plotting_the_graph(industry: str) -> Figure:
     # Simple algorithm that creates the min/max of y-axis based on the multiple of 5.
 
     figure, graphs = plot.subplots(2)
+
     # Declaring that there will be 2 different graphs.
 
     graphs[0].set_title(new_industry_name + "'s Average Working Hour Before the Pandemic (2019)")
@@ -97,11 +97,9 @@ def plotting_the_graph(industry: str) -> Figure:
 
     figure.set_size_inches(16, 10)
     # Setting the window size so it isn't too small.
-
+    plot.close('all')
     return figure
-
-    # Open the window
-
+    # Return the figure to the main file to update the canvas
 
 
 def points_of_pre_pandemic(industry: str) -> list[tuple[int, int]]:

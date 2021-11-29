@@ -4,19 +4,20 @@ A module that contains the code to run the project
 
 import pandas
 import matplotlib
-matplotlib.use('TkAgg')
 from tkinter import *
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import project_part_1 as proj1
 import project_part_2 as proj2
 
+matplotlib.use('TkAgg')
 
 ########
-#Part 1
+# Part 1
 ########
 root = Tk()
 root.overrideredirect(True)
-root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))  #displays the window in full screen
+root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))
+# Displays the window in full screen
 
 frame = Frame(root)
 frame.pack()
@@ -25,9 +26,8 @@ bottomframe = Frame(root)
 bottomframe.pack(side=BOTTOM)
 
 canvas = None
-figure = None
 
-#Buttons:
+# Buttons:
 
 button_of_agriculture = Button(frame, text = "Agriculture", command= lambda: display("Agriculture"), padx= 25)
 button_of_agriculture.grid(row=0 , column= 0)     #Placing the buttons on the screen
@@ -56,8 +56,8 @@ button_of_accomodation_and_food.grid(row=0 , column= 7)
 button_of_public_administration = Button(frame, text = "Public administration", command= lambda: display("Public administration"), padx= 25)
 button_of_public_administration.grid(row=0 , column= 8)
 
-quit_button = Button(frame, text = "Close the program", command= root.destroy)  #The quit button
-quit_button.grid(row= 10, column= 4)
+quit_button = Button(frame, text="Close the program", command=root.destroy)  # The quit button
+quit_button.grid(row=10, column=4)
 
 
 def display(industry: str) -> None:    
@@ -66,18 +66,16 @@ def display(industry: str) -> None:
     """
     global canvas, bottomframe
 
-    if canvas:        #Removing the existing graph (if there is any)
+    if canvas:        # Removing the existing graph (if there is any)
         bottomframe.destroy()
-        canvas.get_tk_widget().destroy()
         bottomframe = Frame(root)
         bottomframe.pack(side=BOTTOM)
 
-
-    #Generating the figure and a canvas to display it
+    # Generating the figure and a canvas to display it
     figure = proj1.plotting_the_graph(industry)   
     canvas = FigureCanvasTkAgg(figure, master=bottomframe)
 
-    canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=True)  #Displaying the figure
+    canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=True)  # Displaying the figure
 
 
 root.mainloop()
