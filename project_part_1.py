@@ -5,6 +5,8 @@ from before the pandemic (2019) and during the pandemic (2020) the two year will
 to 2 different graphs and the x-axis will represent the average working hour while the y-axis
 will be representing in the form of year and month.
 
+This module contains all the necessary code to implement the first part of the project, and must be imported in the main.py file.
+
 """
 import matplotlib.pyplot as plot
 import pandas as p
