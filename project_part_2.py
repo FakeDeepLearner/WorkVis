@@ -1,3 +1,8 @@
+"""
+This module contains all of the code needed to implement the second part of the project.
+It must be imported into the main.py file
+"""
+
 import matplotlib.pyplot as plot
 import pandas as p
 
