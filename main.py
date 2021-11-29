@@ -78,10 +78,11 @@ def Display(industry: str) -> None:
         bottomframe.pack(side=BOTTOM)
 
 
+
     figure = proj1.plotting_the_graph(industry)
     canvas = FigureCanvasTkAgg(figure, master=bottomframe)
-
     canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=True)
+    
 
 
 
