@@ -99,12 +99,8 @@ def plotting_the_graph(industry: str) -> Figure:
     figure.set_size_inches(16, 10)
     # Setting the window size so it isn't too small.
     plot.close('all')
-
-
     return figure
-
-    # Open the window
-
+    # Return the figure to the main file to update the canvas
 
 
 def points_of_pre_pandemic(industry: str) -> list[tuple[int, int]]:
