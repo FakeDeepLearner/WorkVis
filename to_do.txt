@@ -9,6 +9,6 @@ Distribution of tasks: (To be filled and updated regularly.)
 Eren: Design the UI.
 Sheldon: Work on the datafrae creations.
 Khizer: Help Sheldon.
-Thomas: 
+Thomas: Help Eren for the GUI if necessary with the display of tables on the screen
 ###
 
