@@ -86,10 +86,9 @@ def display(industry: str) -> None:
 
     canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=True)  # Displaying the figure
 
-root.mainloop()
 
+root.mainloop()
 ########
 # Part 2
 ########
-
 
