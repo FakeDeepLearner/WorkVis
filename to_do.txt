@@ -6,12 +6,9 @@ Make the necessary dataframes to be rendered with the interactive panel. (This i
 
 ###
 Distribution of tasks: (To be filled and updated regularly.)
-
-Eren: Configure the tkinter window to display the buttons.  (Until tonight, or tmrw after lecture at the latest.) Also, after the graphs are set, work on rendering them.
-(Deadline to be determined) Test if the graphs work. Document the module(s)
-Thomas : Make the necessary line graphs to be displayed when the buttons are pressed.  (Until friday night.)
-Khizer: Help Thomas. (for now.) I can assign you additional tasks tomorrow if you want.
-Sheldon: Work on Part 2
-
+Eren: Design the UI.
+Sheldon: Work on the datafrae creations.
+Khizer: Help Sheldon.
+Thomas: 
 ###
 
