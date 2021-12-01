@@ -156,4 +156,17 @@ def dropdown_menu() -> None:
                       "August 2019- 20", "September 2019- 20", "October 2019- 20", "November 2019- 20", "Decemeber 2019- 20")
     menu.grid(row= 1, column= 4)
 
-root.mainloop() 
+
+def graph() -> None:
+    """
+    Graph (will change the name)
+    """
+    dates = {"January 2019- 20": ("19-Jan", "20-Jan"), "February 2019- 20": ("19-Feb", "20-Feb"),
+             "March 2019- 20": ("19-Mar", "20-Mar"), "April 2019- 20": ("19-Apr", "20-Apr"),
+             "May 2019- 20": ("19-May", "20-May"), "June 2019- 20": ("19-Jun", "20-Jun"),
+             "July 2019- 20": ("19-Jul", "20-Jul"), "August 2019- 20": ("19-Aug", "20-Aug"),
+             "September 2019- 20": ("19-Sep", "20-Sep"), "October 2019- 20": ("19-Oct", "20-Oct"),
+             "November 2019- 20": ("19-Nov", "20-Nov"), "Decemeber 2019- 20": ("19-Dec", "20-Dec")}
+    # Don't know if it will be useful but it's mainly here to safe keep the idea.
+
+root.mainloop()
