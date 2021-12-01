@@ -15,19 +15,22 @@ matplotlib.use('TkAgg')
 ########
 # Part 1
 ########
-
+#
 # root = Tk()
 # root.overrideredirect(True)
 # root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))
-# root.config(bg='Pale Turquoise')
-# # Displays the window in full screen
+# root.config(bg='#73C2FB')
+# # Displays the window in full screen and set the background color
 #
 # frame = Frame(root)
 # frame.pack()
-# frame.config(bg='Pale Turquoise')
+# frame.config(bg='#73C2FB')
+#
+# middleframe = Frame(root)
+#
 #
 # bottomframe = Frame(root)
-# bottomframe.pack(side=BOTTOM)
+# bottomframe.pack(side=LEFT)
 #
 # canvas = None
 #
@@ -102,11 +105,11 @@ matplotlib.use('TkAgg')
 root = Tk()
 root.overrideredirect(True)
 root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))
-root.config(bg='Pale Turquoise')
+root.config(bg='#73C2FB')
 
 frame = Frame(root)
 frame.pack()
-frame.config(bg='Pale Turquoise')
+frame.config(bg='#73C2FB')
 
 bottomframe = Frame(root)
 bottomframe.pack(side=BOTTOM)
@@ -127,7 +130,6 @@ button_of_construction.grid(row=0, column=2)
 button_of_wholesale = Button(frame, text="Wholesale and retail trade",
                              command=lambda: dropdown_menu(), padx=25, bg='light blue')
 button_of_wholesale.grid(row=0, column=3)
-button_of_wholesale.config(padx=7, pady=7)
 
 button_of_transportation_and_warehousing = Button(frame, text="Transportation and warehousing",
                                                   command=lambda: dropdown_menu(), padx=25, bg='light blue')
@@ -163,13 +165,13 @@ def dropdown_menu() -> None:
                "April 2019- 20", "May 2019- 20", "June 2019- 20", "July 2019- 20",
                "August 2019- 20", "September 2019- 20",
                "October 2019- 20", "November 2019- 20", "Decemeber 2019- 20"]
-    
-    clicked_var = StringVar()               
+
+    clicked_var = StringVar()
     clicked_var.set("Select a value")    # Default value
-    
+
     menu = OptionMenu(frame, clicked_var, *options)
     menu.grid(row=1, column=4)
-    menu.config(bg='cyan', width=10, height=3)
+    menu.config(bg='cyan', width=10, height=3, )
 
 
 root.mainloop()
