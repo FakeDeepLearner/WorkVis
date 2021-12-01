@@ -141,7 +141,7 @@ button_of_public_administration = Button(frame, text="Public administration",
 button_of_public_administration.grid(row=0, column=8)
 
 quit_button = Button(frame, text="Close the program", command = lambda: root.destroy())  # The quit button
-quit_button.grid(row=1, column=4)
+quit_button.grid(row=2, column=4)
 
 def dropdown_menu() -> None:
     """
@@ -154,6 +154,6 @@ def dropdown_menu() -> None:
     menu = OptionMenu(frame, clicked_var, "January 2019- 20", "February 2019- 20", "January 2019- 20", "March 2019- 20", 
                       "April 2019- 20", "May 2019- 20", "June 2019- 20", "July 2019- 20", 
                       "August 2019- 20", "September 2019- 20", "October 2019- 20", "November 2019- 20", "Decemeber 2019- 20")
-    menu.grid(row= 2, column= 4)
+    menu.grid(row= 1, column= 4)
 
 root.mainloop() 
