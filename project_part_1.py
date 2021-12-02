@@ -83,8 +83,8 @@ def plotting_the_graph(industry: str) -> Figure:
 
     # Declaring that there will be 2 different graphs and its background color.
 
-    graphs[0].set_title(new_industry_name + "'s Average Working Hour Before the Pandemic (2019)")
-    graphs[1].set_title(new_industry_name + "'s Average Working Hour During the Pandemic (2020)")
+    graphs[0].set_title(new_industry_name + "'s Average Working Hours Before the Pandemic (2019)")
+    graphs[1].set_title(new_industry_name + "'s Average Working Hours During the Pandemic (2020)")
     # Creating the titles for the 2 graphs.
 
     graphs[0].plot(pre_pandemic_time_axis, pre_pandemic_stat_axis, color='red', marker='o')
