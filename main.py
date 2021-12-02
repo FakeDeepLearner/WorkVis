@@ -37,42 +37,42 @@ matplotlib.use('TkAgg')
 # # Buttons:
 
 # button_of_agriculture = Button(frame, text="Agriculture",
-#                                command=lambda: display("Agriculture"), padx=25, bg='light blue')
+#                                command=lambda: display("Agriculture"), padx=15, bg='light blue')
 # button_of_agriculture.grid(row=0, column=0)     # Placing the buttons on the screen
 
-# button_of_FFMQOG = Button(frame, text="FFMQOG",
-#                           command=lambda: display("Forestry, fishing, mining, quarrying, oil and gas"), padx=25,
+# button_of_FFMQOG = Button(frame, text="Forestry, fishing, mining, quarrying, oil and gas",
+#                           command=lambda: display("Forestry, fishing, mining, quarrying, oil and gas"), padx=15,
 #                           bg='light blue')
 # button_of_FFMQOG.grid(row=0, column=1)
 
 # button_of_construction = Button(frame, text="Construction",
-#                                 command=lambda: display("Construction"), padx=25, bg='light blue')
+#                                 command=lambda: display("Construction"), padx=15, bg='light blue')
 # button_of_construction.grid(row=0, column=2)
 
 # button_of_wholesale = Button(frame, text="Wholesale and retail trade",
-#                              command=lambda: display("Wholesale and retail trade"), padx=25, bg='light blue')
+#                              command=lambda: display("Wholesale and retail trade"), padx=15, bg='light blue')
 # button_of_wholesale.grid(row=0, column=3)
 
 # button_of_transportation_and_warehousing = Button(frame, text="Transportation and warehousing",
-#                                                   command=lambda: display("Transportation and warehousing"), padx=25,
+#                                                   command=lambda: display("Transportation and warehousing"), padx=15,
 #                                                   bg='light blue')
 # button_of_transportation_and_warehousing.grid(row=0, column=4)
 
 # button_of_edicational_services = Button(frame, text="Education",
-#                                         command=lambda: display("Educational services"), padx=25, bg='light blue')
+#                                         command=lambda: display("Educational services"), padx=15, bg='light blue')
 # button_of_edicational_services.grid(row=0, column=5)
 
 # button_of_health_care = Button(frame, text="Health care and social assistance",
-#                                command=lambda: display("Health care and social assistance"), padx=25, bg='light blue')
+#                                command=lambda: display("Health care and social assistance"), padx=15, bg='light blue')
 # button_of_health_care.grid(row=0, column=6)
 
 # button_of_accomodation_and_food = Button(frame, text="Accomodation and food services",
-#                                          command=lambda: display("Accommodation and food services"), padx=25,
+#                                          command=lambda: display("Accommodation and food services"), padx=15,
 #                                          bg='light blue')
 # button_of_accomodation_and_food.grid(row=0, column=7)
 
 # button_of_public_administration = Button(frame, text="Public administration",
-#                                          command=lambda: display("Public administration"), padx=25, bg='light blue')
+#                                          command=lambda: display("Public administration"), padx=15, bg='light blue')
 # button_of_public_administration.grid(row=0, column=8)
 
 # quit_button = Button(frame, text="Close the program", command=root.destroy, bg='light yellow')  # The quit button
@@ -116,39 +116,39 @@ bottomframe.pack(side=BOTTOM)
 
 
 button_of_agriculture = Button(frame, text="Agriculture",
-                               command=lambda: dropdown_menu(), padx=25, bg='light blue')
+                               command=lambda: dropdown_menu(), padx=15, bg='light blue')
 button_of_agriculture.grid(row=0, column=0)     # Placing the buttons on the screen
 
-button_of_FFMQOG = Button(frame, text="FFMQOG",
-                          command=lambda: dropdown_menu(), padx=25, bg='light blue')
+button_of_FFMQOG = Button(frame, text="Forestry, fishing, mining, quarrying, oil and gas",
+                          command=lambda: dropdown_menu(), padx=15, bg='light blue')
 button_of_FFMQOG.grid(row=0, column=1)
 
 button_of_construction = Button(frame, text="Construction",
-                                command=lambda: dropdown_menu(), padx=25, bg='light blue')
+                                command=lambda: dropdown_menu(), padx=15, bg='light blue')
 button_of_construction.grid(row=0, column=2)
 
 button_of_wholesale = Button(frame, text="Wholesale and retail trade",
-                             command=lambda: dropdown_menu(), padx=25, bg='light blue')
+                             command=lambda: dropdown_menu(), padx=15, bg='light blue')
 button_of_wholesale.grid(row=0, column=3)
 
 button_of_transportation_and_warehousing = Button(frame, text="Transportation and warehousing",
-                                                  command=lambda: dropdown_menu(), padx=25, bg='light blue')
+                                                  command=lambda: dropdown_menu(), padx=15, bg='light blue')
 button_of_transportation_and_warehousing.grid(row=0, column=4)
 
 button_of_edicational_services = Button(frame, text="Education",
-                                        command=lambda: dropdown_menu(), padx=25, bg='light blue')
+                                        command=lambda: dropdown_menu(), padx=15, bg='light blue')
 button_of_edicational_services.grid(row=0, column=5)
 
 button_of_health_care = Button(frame, text="Health care and social assistance",
-                               command=lambda: dropdown_menu(), padx=25, bg='light blue')
+                               command=lambda: dropdown_menu(), padx=15, bg='light blue')
 button_of_health_care.grid(row=0, column=6)
 
 button_of_accomodation_and_food = Button(frame, text="Accomodation and food services",
-                                         command=lambda: dropdown_menu(), padx=25, bg='light blue')
+                                         command=lambda: dropdown_menu(), padx=15, bg='light blue')
 button_of_accomodation_and_food.grid(row=0, column=7)
 
 button_of_public_administration = Button(frame, text="Public administration",
-                                         command=lambda: dropdown_menu(), padx=25, bg='light blue')
+                                         command=lambda: dropdown_menu(), padx=15, bg='light blue')
 button_of_public_administration.grid(row=0, column=8)
 
 quit_button = Button(frame, text="Close the program", command=lambda: root.destroy(), bg='light yellow')
