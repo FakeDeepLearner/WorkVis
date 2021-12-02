@@ -52,7 +52,7 @@ def create_dataframe(industry: str, time_frame: str) -> p.DataFrame:
     value_2 = pre_pandemic_data.iloc[industries_and_indexes[industry], dates_to_indexes[time_frame] + 1]
     # Getting the necessary value from pre_pandemic_data
     new_dataframe["Increase- Decrease"] = value_1 - value_2
-    new_dataframe["Percentage of Increase - Decrease"] = (100 * (value_1 - value_2)) / value_2
+    new_dataframe["Percentage of Increase - Decrease"] = 100 * ((value_1 - value_2) / value_2)
     # Getting a percentage
 
     return new_dataframe
