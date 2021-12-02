@@ -79,9 +79,9 @@ def plotting_the_graph(industry: str) -> Figure:
     min_y_axis = int(round(min(during_pandemic_stat_axis + pre_pandemic_stat_axis) / 5) * 5)
     # Simple algorithm that creates the min/max of y-axis based on the multiple of 5.
 
-    figure, graphs = plot.subplots(2)
+    figure, graphs = plot.subplots(2, facecolor='#73C2FB')
 
-    # Declaring that there will be 2 different graphs.
+    # Declaring that there will be 2 different graphs and its background color.
 
     graphs[0].set_title(new_industry_name + "'s Average Working Hour Before the Pandemic (2019)")
     graphs[1].set_title(new_industry_name + "'s Average Working Hour During the Pandemic (2020)")
@@ -93,10 +93,13 @@ def plotting_the_graph(industry: str) -> Figure:
 
     plot.setp(graphs, ylabel='Average Working Hours',
               xlabel='Month', ylim=(int(min_y_axis - 5), int(max_y_axis + 5)))
-    # Labeling each axis and using the min/max values to indicate the range of the graph's y-axis.
 
-    figure.set_size_inches(16, 10)
+    # Labeling each axis and using the min/max values to indicate the range of the graph's y-axis.
+    figure.set_size_inches(16, 12)
     # Setting the window size so it isn't too small.
+    figure.tight_layout(pad=3.0)
+    # Setting the spacing between 2 graphs
+
     plot.close('all')
     return figure
     # Return the figure to the main file to update the canvas
