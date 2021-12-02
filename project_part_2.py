@@ -29,8 +29,15 @@ def create_dataframe(industry: str, time_frame: str) -> p.DataFrame:
     #Creating a new DataFrame where rows and columns are 0-indexed by default
     new_dataframe = p.DataFrame(columns= ["industry", "timeframe",  "Increase- Decrease", "Percentage of Increase - Decrease"], index= ["values"])
     new_dataframe["industry"] = industry
-    
-    
+    dates_to_indexes = {"January 2019- 20": 0, "February 2019- 20": 1,
+                        "March 2019- 20": 2, "April 2019- 20": 4,
+                        "May 2019- 20": 3, "June 2019- 20": 5,
+                        "July 2019- 20": 6, "August 2019- 20": 7,
+                        "September 2019- 20": 8, "October 2019- 20": 9,
+                        "November 2019- 20": 10, "Decemeber 2019- 20": 11}
+    dates = list(dates_to_indexes.keys())
+
+
     # The iloc[:, :] function allows us to access specific values from the DataFrame by their indexes. 
     # The first parameter, which is the rows,  takes 2 integers separated by a colon (:) and gives out that part of the data frame. The end point is exclusive.
     # The second parameter, which is the colums,  takes 2 integers separated by a colon (:) and gives out that part of the data frame. The end point is exclusive.
@@ -38,91 +45,14 @@ def create_dataframe(industry: str, time_frame: str) -> p.DataFrame:
     
     
     # Considering each case separately.
-        
-    if time_frame == "January 2019- 20":
-        new_dataframe["timeframe"] = time_frame
-        a = during_the_pandemic_data.iloc[industries_and_indexes[industry], 1]      # Getting the necessary value from during_the_pandemic_data
-        b = pre_pandemic_data.iloc[industries_and_indexes[industry], 1]              # Getting the necessary value from pre_pandemic_data
-        new_dataframe["Increase- Decrease"] = a - b                                 
-        new_dataframe["Percentage of Increase - Decrease"] = (100 * (a - b)) / b    # Getting a percentage
-        
-    if time_frame == "February 2019- 20":
-        new_dataframe["timeframe"] = time_frame
-        a = during_the_pandemic_data.iloc[industries_and_indexes[industry], 2]      
-        b = pre_pandemic_data.iloc[industries_and_indexes[industry], 2]              
-        new_dataframe["Increase- Decrease"] = a - b                                 
-        new_dataframe["Percentage of Increase - Decrease"] = (100 * (a - b)) / b 
-        
-    if time_frame ==  "March 2019- 20":
-        new_dataframe["timeframe"] = time_frame
-        a = during_the_pandemic_data.iloc[industries_and_indexes[industry], 3]      
-        b = pre_pandemic_data.iloc[industries_and_indexes[industry], 3]             
-        new_dataframe["Increase- Decrease"] = a - b                                 
-        new_dataframe["Percentage of Increase - Decrease"] = (100 * (a - b)) / b 
-        
-    if time_frame == "April 2019- 20":
-        new_dataframe["timeframe"] = time_frame
-        a = during_the_pandemic_data.iloc[industries_and_indexes[industry], 4]      
-        b = pre_pandemic_data.iloc[industries_and_indexes[industry], 4]             
-        new_dataframe["Increase- Decrease"] = a - b                                 
-        new_dataframe["Percentage of Increase - Decrease"] = (100 * (a - b)) / b 
-        
-    if time_frame == "May 2019- 20":
-        new_dataframe["timeframe"] = time_frame
-        a = during_the_pandemic_data.iloc[industries_and_indexes[industry], 5]      
-        b = pre_pandemic_data.iloc[industries_and_indexes[industry], 5]             
-        new_dataframe["Increase- Decrease"] = a - b                                 
-        new_dataframe["Percentage of Increase - Decrease"] = (100 * (a - b)) / b 
-        
-    if time_frame == "June 2019- 20":
-        new_dataframe["timeframe"] = time_frame
-        a = during_the_pandemic_data.iloc[industries_and_indexes[industry], 6]      
-        b = pre_pandemic_data.iloc[industries_and_indexes[industry], 6]             
-        new_dataframe["Increase- Decrease"] = a - b                                 
-        new_dataframe["Percentage of Increase - Decrease"] = (100 * (a - b)) / b 
-        
-    if time_frame == "July 2019- 20":
-        new_dataframe["timeframe"] = time_frame
-        a = during_the_pandemic_data.iloc[industries_and_indexes[industry], 7]      
-        b = pre_pandemic_data.iloc[industries_and_indexes[industry], 7]             
-        new_dataframe["Increase- Decrease"] = a - b                                 
-        new_dataframe["Percentage of Increase - Decrease"] = (100 * (a - b)) / b 
-        
-    if time_frame == "August 2019- 20":
-        new_dataframe["timeframe"] = time_frame
-        a = during_the_pandemic_data.iloc[industries_and_indexes[industry], 8]      
-        b = pre_pandemic_data.iloc[industries_and_indexes[industry], 8]             
-        new_dataframe["Increase- Decrease"] = a - b                                 
-        new_dataframe["Percentage of Increase - Decrease"] = (100 * (a - b)) / b 
-        
-    if time_frame == "September 2019- 20":
-        new_dataframe["timeframe"] = time_frame
-        a = during_the_pandemic_data.iloc[industries_and_indexes[industry], 9]      
-        b = pre_pandemic_data.iloc[industries_and_indexes[industry], 9]             
-        new_dataframe["Increase- Decrease"] = a - b                                 
-        new_dataframe["Percentage of Increase - Decrease"] = (100 * (a - b)) / b 
-        
-    if time_frame == "October 2019- 20":
-        new_dataframe["timeframe"] = time_frame
-        a = during_the_pandemic_data.iloc[industries_and_indexes[industry], 10]      
-        b = pre_pandemic_data.iloc[industries_and_indexes[industry], 10]             
-        new_dataframe["Increase- Decrease"] = a - b                                 
-        new_dataframe["Percentage of Increase - Decrease"] = (100 * (a - b)) / b 
-        
-    if time_frame == "November 2019- 20":
-        new_dataframe["timeframe"] = time_frame
-        a = during_the_pandemic_data.iloc[industries_and_indexes[industry], 11]      
-        b = pre_pandemic_data.iloc[industries_and_indexes[industry], 11]             
-        new_dataframe["Increase- Decrease"] = a - b                                 
-        new_dataframe["Percentage of Increase - Decrease"] = (100 * (a - b)) / b 
-        
-    if time_frame == "Decemeber 2019- 20":
-        new_dataframe["timeframe"] = time_frame
-        a = during_the_pandemic_data.iloc[industries_and_indexes[industry], 12]      
-        b = pre_pandemic_data.iloc[industries_and_indexes[industry], 12]             
-        new_dataframe["Increase- Decrease"] = a - b                                 
-        new_dataframe["Percentage of Increase - Decrease"] = (100 * (a - b)) / b 
-        
-    
+
+    new_dataframe["timeframe"] = dates[dates_to_indexes[time_frame]]
+    value_1 = during_the_pandemic_data.iloc[industries_and_indexes[industry], dates_to_indexes[time_frame] + 1]
+    # Getting the necessary value from during_the_pandemic_data
+    value_2 = pre_pandemic_data.iloc[industries_and_indexes[industry], dates_to_indexes[time_frame] + 1]
+    # Getting the necessary value from pre_pandemic_data
+    new_dataframe["Increase- Decrease"] = value_1 - value_2
+    new_dataframe["Percentage of Increase - Decrease"] = (100 * (value_1 - value_2)) / value_2
+    # Getting a percentage
+
     return new_dataframe
-    
