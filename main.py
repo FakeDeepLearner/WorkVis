@@ -149,11 +149,11 @@ def dropdown_menu() -> None:
     """
     #These are the options on the dropdown menu
     options = ["January 2019- 20", "February 2019- 20", "March 2019- 20", 
-                      "April 2019- 20", "May 2019- 20", "June 2019- 20", "July 2019- 20", 
-                      "August 2019- 20", "September 2019- 20", 
-                      "October 2019- 20", "November 2019- 20", "Decemeber 2019- 20"]
+               "April 2019- 20", "May 2019- 20", "June 2019- 20", 
+               "July 2019- 20", "August 2019- 20", "September 2019- 20", 
+                "October 2019- 20", "November 2019- 20", "Decemeber 2019- 20"]
     
-    clicked_var = StringVar()               
+    clicked_var = StringVar()           # A string variable container     
     clicked_var.set("Select a value")    #Default value
     
     menu = OptionMenu(frame, clicked_var, *options)
