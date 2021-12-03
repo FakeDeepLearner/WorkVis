@@ -31,8 +31,8 @@ def create_dataframe(industry: str, time_frame: str) -> p.DataFrame:
     
     
     dates_to_indexes = {"January 2019- 20": 0, "February 2019- 20": 1,
-                        "March 2019- 20": 2, "April 2019- 20": 4,
-                        "May 2019- 20": 3, "June 2019- 20": 5,
+                        "March 2019- 20": 2, "April 2019- 20": 3,
+                        "May 2019- 20": 4, "June 2019- 20": 5,
                         "July 2019- 20": 6, "August 2019- 20": 7,
                         "September 2019- 20": 8, "October 2019- 20": 9,
                         "November 2019- 20": 10, "Decemeber 2019- 20": 11}
