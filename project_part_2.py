@@ -63,4 +63,3 @@ def create_dataframe(industry: str, time_frame: str) -> p.DataFrame:
     return new_dataframe
 
 
-print(create_dataframe("Public administration", "June 2019- 20"))
