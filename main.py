@@ -2,6 +2,8 @@
 A module that contains the code to run the project
 """
 
+from numpy import can_cast
+from numpy.lib.twodim_base import mask_indices
 import pandas
 import matplotlib
 from tkinter import *
@@ -114,6 +116,7 @@ frame.config(bg='#73C2FB')
 bottomframe = Frame(root)
 bottomframe.pack(side=BOTTOM)
 
+canvas =  None
 
 button_of_agriculture = Button(frame, text="Agriculture",
                                command=lambda: dropdown_menu(), padx=15, bg='light blue')
@@ -172,6 +175,21 @@ def dropdown_menu() -> None:
     menu = OptionMenu(frame, clicked_var, *options)
     menu.grid(row=1, column=4)
     menu.config(bg='cyan', width=10, height=3, )
-
+    
+    
+def display_graph(industry: str, timeframe: str) -> None:
+    """
+    Display the necessary DataFrame on the screen.
+    """
+    global canvas, bottomframe
+    
+    if canvas:
+        bottomframe.destroy()
+        bottomframe = Frame(root)
+        bottomframe.pack(side = BOTTOM)
+    
+    figure1 = proj2.create_dataframe(industry, timeframe)
+    canvas = FigureCanvasTkAgg(figure1, master = bottomframe)
+    canvas.get_tk_widget().pack(side = BOTTOM, fill = BOTH, expand = True)
 
 root.mainloop()
