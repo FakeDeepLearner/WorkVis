@@ -96,3 +96,26 @@ def create_table(industry: str, time_frame: str):
     plot.box(on=None)
     plot.show()
     return numerics
+
+
+def plotting_the_table(data: p.DataFrame) -> None:
+    """Creates table with data from create_dataframe"""
+    
+    values = data.values
+    # creates an array of values from dataframe
+
+    column_labels = ['Industry', 'date', 'Pre Pandemic Value', 'Pandemic Value',
+                     'Difference in revenue in Billions of Dollars' 'Percentage change']
+    row_labels = ['Values']
+    table_values = values
+    # having some issues with turning the specific datatype from create_dataframe to a table as the most simple numpy
+    # datatype is int64  but create_dataframe returns a type 0 datatype. I will figure it out by tomorrow
+
+    center = plot.subplot2grid((2, 2), (0, 0), colspan=3, rowspan=4)
+    center.table(cellText=table_values,
+                 rowLabels=row_labels,
+                 colLabels=column_labels, loc="lower center")
+
+    center.axis("off")
+
+    plot.show()
