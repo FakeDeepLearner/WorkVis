@@ -75,20 +75,20 @@ def create_table_value(df: p.DataFrame) -> list[tuple[str, float]]:
     return data_list
 
 
-def create_table(industry: str, time_frame: str):
+def create_table(industry: str, time_frame: str) -> Figure:
     """Creates the table with the data"""
 
     data = create_table_value(create_dataframe(industry, time_frame))
     values = [data[i][0] for i in range(len(data))]
     numerics = [str(data[i][1]) for i in range(len(data))]
 
-    figure, tables = plot.subplots()
+    figure, tables = plot.subplots(facecolor='#73C2FB')
     tables.set_axis_off()
     table =tables.table(
         cellText=[numerics],
         rowLabels=None,
         colLabels=values,
-        loc="center"
+        loc='upper center'
     )
     table.auto_set_font_size(False)
     table.set_fontsize(10)
@@ -99,7 +99,7 @@ def create_table(industry: str, time_frame: str):
 
     plot.box(on=None)
     plot.show()
-    return numerics
+    return figure
 
 
 def plotting_the_table(data: p.DataFrame) -> None:
