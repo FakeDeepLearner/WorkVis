@@ -25,11 +25,10 @@ def create_dataframe(industry: str, time_frame: str) -> p.DataFrame:
                 
         - industry in proj1.industry_and_its_index
     """
-    #Creating a new DataFrame where rows and columns are 0-indexed by default
-    new_dataframe = p.DataFrame(columns= ["industry", "timeframe", "pre-pandemic value","value during the pandemic" ,  "Increase- Decrease", "Percentage of Increase - Decrease"], index= ["values"])
+    # Creating a new DataFrame where rows and columns are 0-indexed by default
+    new_dataframe = p.DataFrame(columns= ["industry", "timeframe", "pre-pandemic value", "value during the pandemic" , "Increase- Decrease", "Percentage of Increase - Decrease"], index= ["values"])
     new_dataframe["industry"] = industry
-    
-    
+
     dates_to_indexes = {"January 2019- 20": 0, "February 2019- 20": 1,
                         "March 2019- 20": 2, "April 2019- 20": 3,
                         "May 2019- 20": 4, "June 2019- 20": 5,
@@ -43,9 +42,8 @@ def create_dataframe(industry: str, time_frame: str) -> p.DataFrame:
     # The first parameter, which is the rows,  takes 2 integers separated by a colon (:) and gives out that part of the data frame. The end point is exclusive.
     # The second parameter, which is the colums,  takes 2 integers separated by a colon (:) and gives out that part of the data frame. The end point is exclusive.
     # For example iloc[4 : 7, 3 : 14] would return the rows 4, 5 and 6; the columns from 3 up to but not including 14.
-    
-    
-    new_dataframe["timeframe"] = dates[dates_to_indexes[time_frame]] #Modifying the "timeframe" column
+
+    new_dataframe["timeframe"] = dates[dates_to_indexes[time_frame]] # Modifying the "timeframe" column
     
     value_1 = during_the_pandemic_data.iloc[industries_and_indexes[industry], dates_to_indexes[time_frame] + 1]
     # Getting the necessary value from during_the_pandemic_data
