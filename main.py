@@ -194,8 +194,18 @@ def display_graph(industry: str, timeframe: str) -> None:  #Ignore this for now
     """
     Display the necessary DataFrame on the screen.
     """
-    figure1 = proj2.create_dataframe(industry, timeframe)
+    global canvas, bottomframe
 
+    if canvas:        # Removing the existing graph (if there is any)
+        bottomframe.destroy()
+        bottomframe = Frame(root)
+        bottomframe.pack(side=BOTTOM)
+
+    # Generating the figure and a canvas to display it
+    figure = proj2.create_table(industry, timeframe)
+    canvas = FigureCanvasTkAgg(figure, master=bottomframe)
+
+    canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=True)  # Displaying the figure
 
 
 root.mainloop()
