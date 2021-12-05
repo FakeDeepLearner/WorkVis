@@ -1,15 +1,18 @@
 """
 A module that contains the code to run the project
 """
-
-from numpy import can_cast
+from matplotlib.figure import Figure
+from numpy import can_cast, fabs
+from numpy.lib.arraypad import pad
 from numpy.lib.twodim_base import mask_indices
 import pandas
 import matplotlib
 from tkinter import *
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+from traitlets.traitlets import _callback_wrapper
 import project_part_1 as proj1
 import project_part_2 as proj2
+
 
 matplotlib.use('TkAgg')
 
@@ -155,14 +158,17 @@ button_of_public_administration = Button(frame, text="Public administration",
 button_of_public_administration.grid(row=0, column=8)
 
 quit_button = Button(frame, text="Close the program", command=lambda: root.destroy(), bg='light yellow')
-quit_button.grid(row=2, column=4)
+quit_button.grid(row=3, column=4)
 # The quit button
 
+execute_button = Button(frame, text = "Draw the table", command= lambda: display_graph(find_text(button_of_agriculture) ,clicked_var.get()))
+execute_button.grid(row = 2, column= 4, pady = 20)
 
 def dropdown_menu() -> None:
     """
     Display a dropdown menu to select options from.
     """
+    global clicked_var
     # These are the options on the dropdown menu
     options = ["January 2019- 20", "February 2019- 20", "March 2019- 20", 
                "April 2019- 20", "May 2019- 20", "June 2019- 20", 
@@ -173,23 +179,25 @@ def dropdown_menu() -> None:
     clicked_var.set("Select a value")   # Default value
     
     menu = OptionMenu(frame, clicked_var, *options)
-    menu.grid(row=1, column=4)
-    menu.config(bg='cyan', width=10, height=3, )
+    menu.grid(row=1, column=4, pady = 20)
+    menu.config(bg='cyan', width=30, height=1)
     
     
-def display_graph(industry: str, timeframe: str) -> None:
+def find_text(button: Button) -> str:
+    """
+    Return the "text" value of a button.
+    """
+    return button.cget('text')
+
+    
+def display_graph(industry: str, timeframe: str) -> None:  #Ignore this for now
     """
     Display the necessary DataFrame on the screen.
     """
-    global canvas, bottomframe
-    
-    if canvas:
-        bottomframe.destroy()
-        bottomframe = Frame(root)
-        bottomframe.pack(side = BOTTOM)
-    
     figure1 = proj2.create_dataframe(industry, timeframe)
-    canvas = FigureCanvasTkAgg(figure1, master = bottomframe)
-    canvas.get_tk_widget().pack(side = BOTTOM, fill = BOTH, expand = True)
+    
+    
 
 root.mainloop()
+
+

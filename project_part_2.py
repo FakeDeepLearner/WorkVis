@@ -3,6 +3,8 @@ This module contains the code required to operate the second part of the project
 """
 
 from datetime import time
+from tkinter.constants import CENTER
+import matplotlib
 import matplotlib.pyplot as plot
 import pandas as p
 import project_part_1 as proj1
@@ -59,6 +61,6 @@ def create_dataframe(industry: str, time_frame: str) -> p.DataFrame:
     
     new_dataframe["Percentage of Increase - Decrease"] = 100 * ((value_1 - value_2) / value_2)
     # Getting a percentage
-
+    
     return new_dataframe
 
