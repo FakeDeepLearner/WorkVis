@@ -3,16 +3,13 @@ This module contains the code required to operate the second part of the project
 """
 
 from datetime import time
-<<<<<<< Updated upstream
-=======
 from tkinter.constants import CENTER
->>>>>>> Stashed changes
 import matplotlib.pyplot as plot
 import pandas as p
 import project_part_1 as proj1
 from matplotlib.figure import Figure
-industries_and_indexes = proj1.industry_and_its_index      # The dictionary corresponding to the industries
 
+industries_and_indexes = proj1.industry_and_its_index  # The dictionary corresponding to the industries
 
 pre_pandemic_data = p.read_csv('Datasets/pre_pandemic.csv')
 during_the_pandemic_data = p.read_csv('Datasets/during_the_pandemic (1).csv')
@@ -30,16 +27,10 @@ def create_dataframe(industry: str, time_frame: str) -> p.DataFrame:
 
         - industry in proj1.industry_and_its_index
     """
-<<<<<<< Updated upstream
     # Creating a new DataFrame where rows and columns are 0-indexed by default
-    new_dataframe = p.DataFrame(columns= ["industry", "timeframe", "pre-pandemic value", "value during the pandemic" , "Increase- Decrease", "Percentage of Increase - Decrease"], index= ["values"])
-    new_dataframe["industry"] = industry
-=======
-    #Creating a new DataFrame where rows and columns are 0-indexed by default
     new_dataframe = p.DataFrame(columns=["Industry", "Time Frame", "Pre-Pandemic Value", "Value During the Pandemic",
                                          "Increase- Decrease", "Percentage of Increase - Decrease"], index=["values"])
     new_dataframe["Industry"] = industry
->>>>>>> Stashed changes
 
     dates_to_indexes = {"January 2019- 20": 0, "February 2019- 20": 1,
                         "March 2019- 20": 2, "April 2019- 20": 3,
@@ -50,20 +41,13 @@ def create_dataframe(industry: str, time_frame: str) -> p.DataFrame:
 
     dates = list(dates_to_indexes.keys())
 
-
     # The iloc[:, :] function allows us to access specific values from the DataFrame by their indexes.
     # The first parameter, which is the rows,  takes 2 integers separated by a colon (:) and gives out that part of the data frame. The end point is exclusive.
     # The second parameter, which is the colums,  takes 2 integers separated by a colon (:) and gives out that part of the data frame. The end point is exclusive.
     # For example iloc[4 : 7, 3 : 14] would return the rows 4, 5 and 6; the columns from 3 up to but not including 14.
 
-<<<<<<< Updated upstream
-    new_dataframe["timeframe"] = dates[dates_to_indexes[time_frame]] # Modifying the "timeframe" column
-    
-=======
+    new_dataframe["Time Frame"] = dates[dates_to_indexes[time_frame]]  # Modifying the "timeframe" column
 
-    new_dataframe["Time Frame"] = dates[dates_to_indexes[time_frame]] #Modifying the "timeframe" column
-
->>>>>>> Stashed changes
     value_1 = during_the_pandemic_data.iloc[industries_and_indexes[industry], dates_to_indexes[time_frame] + 1]
     # Getting the necessary value from during_the_pandemic_data
     value_2 = pre_pandemic_data.iloc[industries_and_indexes[industry], dates_to_indexes[time_frame] + 1]
@@ -80,8 +64,6 @@ def create_dataframe(industry: str, time_frame: str) -> p.DataFrame:
     return new_dataframe
 
 
-<<<<<<< Updated upstream
-=======
 def create_table_value(df: p.DataFrame) -> list[tuple[str, float]]:
     """Returns the value of a DataFrame into a list of tuples"""
     df_to_dict = df.to_dict()
@@ -114,4 +96,3 @@ def create_table(industry: str, time_frame: str):
     plot.box(on=None)
     plot.show()
     return numerics
->>>>>>> Stashed changes
