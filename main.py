@@ -119,7 +119,7 @@ frame.config(bg='#73C2FB')
 bottomframe = Frame(root)
 bottomframe.pack(side=BOTTOM)
 
-canvas =  None
+canvas = None
 
 button_of_agriculture = Button(frame, text="Agriculture",
                                command=lambda: dropdown_menu(), padx=15, bg='light blue')
