@@ -84,12 +84,16 @@ def create_table(industry: str, time_frame: str):
 
     figure, tables = plot.subplots()
     tables.set_axis_off()
-    tables.table(
-        cellText=numerics,
+    table =tables.table(
+        cellText=[numerics],
         rowLabels=None,
         colLabels=values,
-        loc="bottom"
+        loc="center"
     )
+    table.auto_set_font_size(False)
+    table.set_fontsize(10)
+    table.scale(1.2, 1.2)
+    figure.set_size_inches(16, 12)
 
     tables.set_title('Difference in Percentage Pre and During Pandemic')
 
