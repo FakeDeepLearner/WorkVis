@@ -98,7 +98,7 @@ def create_table(industry: str, time_frame: str) -> Figure:
     tables.set_title('Difference in Percentage Pre and During Pandemic')
 
     plot.box(on=None)
-    plot.show()
+
     return figure
 
 
