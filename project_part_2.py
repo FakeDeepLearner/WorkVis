@@ -122,6 +122,6 @@ def plotting_the_table(data: p.DataFrame) -> None:
 
     center.axis("off")
 
-    plot.show()
+
 
 
