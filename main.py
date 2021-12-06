@@ -122,56 +122,56 @@ bottomframe.pack(side=BOTTOM)
 canvas =  None
 
 button_of_agriculture = Button(frame, text="Agriculture",
-                               command=lambda: dropdown_menu(button_of_agriculture), padx=15, bg='light blue')
+                               command=lambda: dropdown_menu("Agriculture"), padx=15, bg='light blue')
 button_of_agriculture.grid(row=0, column=0)     # Placing the buttons on the screen
 
-button_of_FFMQOG = Button(frame, text="Forestry, fishing, mining, quarrying, oil and gas",
-                          command=lambda: dropdown_menu(button_of_FFMQOG), padx=15, bg='light blue')
+button_of_FFMQOG = Button(frame, text="Forestry, Fishing, Mining, Quarrying, Oil and Gas",
+                          command=lambda: dropdown_menu("Forestry, fishing, mining, quarrying, oil and gas"), padx=15, bg='light blue')
 button_of_FFMQOG.grid(row=0, column=1)
 
 button_of_construction = Button(frame, text="Construction",
-                                command=lambda: dropdown_menu(button_of_construction), padx=15, bg='light blue')
+                                command=lambda: dropdown_menu("Construction"), padx=15, bg='light blue')
 button_of_construction.grid(row=0, column=2)
 
-button_of_wholesale = Button(frame, text="Wholesale and retail trade",
-                             command=lambda: dropdown_menu(button_of_wholesale), padx=15, bg='light blue')
+button_of_wholesale = Button(frame, text="Wholesale and Retail Trade",
+                             command=lambda: dropdown_menu("Wholesale and retail trade"), padx=15, bg='light blue')
 button_of_wholesale.grid(row=0, column=3)
 
-button_of_transportation_and_warehousing = Button(frame, text="Transportation and warehousing",
-                                                  command=lambda: dropdown_menu(button_of_transportation_and_warehousing), padx=15, bg='light blue')
+button_of_transportation_and_warehousing = Button(frame, text="Transportation and Warehousing",
+                                                  command=lambda: dropdown_menu("Transportation and warehousing"), padx=15, bg='light blue')
 button_of_transportation_and_warehousing.grid(row=0, column=4)
 
 button_of_edicational_services = Button(frame, text="Education",
-                                        command=lambda: dropdown_menu(button_of_edicational_services), padx=15, bg='light blue')
+                                        command=lambda: dropdown_menu('Educational services'), padx=15, bg='light blue')
 button_of_edicational_services.grid(row=0, column=5)
 
-button_of_health_care = Button(frame, text="Health care and social assistance",
-                               command=lambda: dropdown_menu(button_of_health_care), padx=15, bg='light blue')
+button_of_health_care = Button(frame, text="Health Care and Social Assistance",
+                               command=lambda: dropdown_menu("Health care and social assistance",), padx=15, bg='light blue')
 button_of_health_care.grid(row=0, column=6)
 
-button_of_accomodation_and_food = Button(frame, text="Accomodation and food services",
-                                         command=lambda: dropdown_menu(button_of_accomodation_and_food), padx=15, bg='light blue')
+button_of_accomodation_and_food = Button(frame, text="Accommodation and Food Services",
+                                         command=lambda: dropdown_menu("Accommodation and food services"), padx=15, bg='light blue')
 button_of_accomodation_and_food.grid(row=0, column=7)
 
-button_of_public_administration = Button(frame, text="Public administration",
-                                         command=lambda: dropdown_menu(button_of_public_administration), padx=15, bg='light blue')
+button_of_public_administration = Button(frame, text="Public Administration",
+                                         command=lambda: dropdown_menu("Public administration"), padx=15, bg='light blue')
 button_of_public_administration.grid(row=0, column=8)
 
 quit_button = Button(frame, text="Close the program", command=lambda: root.destroy(), bg='light yellow')
 quit_button.grid(row=3, column=4)
 # The quit button
 
-execute_button = Button(frame, text = "Draw the table", command= lambda: display_graph(industry ,clicked_var.get()))
+execute_button = Button(frame, text = "Draw the table", command= lambda: display_graph(industry_name, clicked_var.get()))
 execute_button.grid(row = 2, column= 4, pady = 20)
 
-industry = ''
+industry_name = ''
 
-def dropdown_menu(x: Button) -> None:
+def dropdown_menu(industry: str) -> None:
     """
     Display a dropdown menu to select options from.
     """
-    global clicked_var, industry
-    industry = ''
+    global clicked_var, industry_name
+    industry_name= ''
     # These are the options on the dropdown menu
     options = ["January 2019- 20", "February 2019- 20", "March 2019- 20", 
                "April 2019- 20", "May 2019- 20", "June 2019- 20", 
@@ -185,8 +185,8 @@ def dropdown_menu(x: Button) -> None:
     menu.grid(row=1, column=4, pady = 20)
     menu.config(bg='cyan', width=30, height=1)
 
-    industry = find_text(x)
-    
+    industry_name = industry
+
 def find_text(button: Button) -> str:
     """
     Return the "text" value of a button.
