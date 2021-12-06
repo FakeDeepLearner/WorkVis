@@ -30,7 +30,26 @@ def create_dataframe(industry: str, time_frame: str) -> p.DataFrame:
     # Creating a new DataFrame where rows and columns are 0-indexed by default
     new_dataframe = p.DataFrame(columns=["Industry", "Time Frame", "Pre-Pandemic Value", "Value During the Pandemic",
                                          "Increase- Decrease", "Percentage of Increase - Decrease"], index=["values"])
-    new_dataframe["Industry"] = industry
+
+
+    industry_name = industry.split(' ')
+    industry_name_fixed = [industry_name[0]]
+    # Accumulator for the new industry name so that the first alphabet of each word is capitalized,
+    # index 0 doesn't count because its first letter is capitalized by default.
+
+    for i in range(1, len(industry_name)):
+        if industry_name[i][0].islower() and industry_name[i] != 'and':
+            industry_name_fixed.append(industry_name[i].replace(industry_name[i][0],
+                                                                industry_name[i][0].capitalize(), 1))
+        else:
+            industry_name_fixed.append(industry_name[i])
+
+    # If the first alphabet of the word is lower cased then change it to upper case,
+    # the first word of the industry should always have an uppercase letter
+
+    new_industry_name = ' '.join(industry_name_fixed)
+
+    new_dataframe["Industry"] = new_industry_name
 
     dates_to_indexes = {"January 2019- 20": 0, "February 2019- 20": 1,
                         "March 2019- 20": 2, "April 2019- 20": 3,
@@ -92,7 +111,7 @@ def create_table(industry: str, time_frame: str) -> Figure:
     )
     table.auto_set_font_size(False)
     table.set_fontsize(10)
-    table.scale(1.2, 1.2)
+    table.scale(1.25, 2)
     figure.set_size_inches(16, 12)
 
     tables.set_title('Difference in Percentage Pre and During Pandemic')
