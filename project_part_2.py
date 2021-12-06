@@ -47,6 +47,9 @@ def create_dataframe(industry: str, time_frame: str) -> p.DataFrame:
     # If the first alphabet of the word is lower cased then change it to upper case,
     # the first word of the industry should always have an uppercase letter
 
+    if len(industry) > 30:
+        industry_name_fixed.insert(len(industry_name) // 2, '\n')
+
     new_industry_name = ' '.join(industry_name_fixed)
 
     new_dataframe["Industry"] = new_industry_name
