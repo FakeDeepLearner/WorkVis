@@ -187,16 +187,10 @@ def dropdown_menu(industry: str) -> None:
 
     industry_name = industry
 
-def find_text(button: Button) -> str:
-    """
-    Return the "text" value of a button.
-    """
-    return button.cget('text')
 
-
-def display_graph(industry: str, timeframe: str) -> None:  # Ignore this for now
+def display_graph(industry: str, timeframe: str) -> None:
     """
-    Display the necessary DataFrame on the screen.
+    Display the necessary DataFrame on the screen as table.
     """
     global canvas, bottomframe
 
