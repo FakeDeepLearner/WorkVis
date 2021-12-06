@@ -1,15 +1,9 @@
 """
 A module that contains the code to run the project
 """
-from matplotlib.figure import Figure
-from numpy import can_cast, fabs
-from numpy.lib.arraypad import pad
-from numpy.lib.twodim_base import mask_indices
-import pandas
 import matplotlib
 from tkinter import *
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-from traitlets.traitlets import _callback_wrapper
 import project_part_1 as proj1
 import project_part_2 as proj2
 
@@ -187,6 +181,7 @@ def dropdown_menu(industry: str) -> None:
 
     industry_name = industry
 
+
 def find_text(button: Button) -> str:
     """
     Return the "text" value of a button.
@@ -194,7 +189,7 @@ def find_text(button: Button) -> str:
     return button.cget('text')
 
 
-def display_graph(industry: str, timeframe: str) -> None:  # Ignore this for now
+def display_graph(industry: str, timeframe: str) -> None:
     """
     Display the necessary DataFrame on the screen.
     """
