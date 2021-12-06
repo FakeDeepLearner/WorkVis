@@ -78,9 +78,12 @@ def create_dataframe(industry: str, time_frame: str) -> p.DataFrame:
     new_dataframe["Pre-Pandemic Value"] = value_2
     new_dataframe["Value During the Pandemic"] = value_1
 
-    new_dataframe["Increase- Decrease"] = value_1 - value_2
+    differences = round(value_1 - value_2, 2)
 
-    new_dataframe["Percentage of Increase - Decrease"] = 100 * ((value_1 - value_2) / value_2)
+    new_dataframe["Increase- Decrease"] = differences
+
+    different_percentage = str(round(100 * ((value_1 - value_2) / value_2), 2)) + '%'
+    new_dataframe["Percentage of Increase - Decrease"] = different_percentage
     # Getting a percentage
 
     return new_dataframe
@@ -114,7 +117,7 @@ def create_table(industry: str, time_frame: str) -> Figure:
     )
     table.auto_set_font_size(False)
     table.set_fontsize(10)
-    table.scale(1.25, 2)
+    table.scale(1.25, 1.5)
     figure.set_size_inches(16, 12)
 
     tables.set_title('Difference in Percentage Pre and During Pandemic')
