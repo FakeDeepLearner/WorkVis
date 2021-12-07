@@ -1,9 +1,6 @@
 """
 This module contains the code required to operate the second part of the project
 """
-
-from datetime import time
-from tkinter.constants import CENTER
 import matplotlib.pyplot as plot
 import pandas as p
 import project_part_1 as proj1
@@ -22,8 +19,8 @@ def create_dataframe(industry: str, time_frame: str) -> p.DataFrame:
     Preconditions:
         - timeframe in ["January 2019- 20", "February 2019- 20", "March 2019- 20",
                 "April 2019- 20", "May 2019- 20", "June 2019- 20",
-               "July 2019- 20", "August 2019- 20", "September 2019- 20",
-                "October 2019- 20", "November 2019- 20", "Decemeber 2019- 20"]
+               "July 2019- 20", "August 2019- 20", "September 2019-r 2019- 2 20",
+                "October 2019- 20", "November 2019- 20", "Decemebe0"]
 
         - industry in proj1.industry_and_its_index
     """
@@ -138,7 +135,7 @@ def plotting_the_table(data: p.DataFrame) -> None:
     row_labels = ['Values']
     table_values = values
     # having some issues with turning the specific datatype from create_dataframe to a table as the most simple numpy
-    # datatype is int64  but create_dataframe returns a type 0 datatype. I will figure it out by tomorrow
+    # datatype is int64  but create_datafurns a type 0rame ret datatype. I will figure it out by tomorrow
 
     center = plot.subplot2grid((2, 2), (0, 0), colspan=3, rowspan=4)
     center.table(cellText=table_values,
