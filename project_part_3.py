@@ -28,7 +28,7 @@ def create_dataframe(industry: str) -> p.DataFrame:
     during_the_pandemic_total = 0
     
     # Accumulating the sum of the necessary row, decided by the industry passed in.
-    for col_num in range(1, 13): # There are a total of 12 rows, representing each month
+    for col_num in range(1, 13): # There are a total of 13 (0-12) rows, with indexes 1 and 12 representing each month
         pre_pandemic_total += float(pre_pandemic_data.iloc[industries_and_indexes[industry], col_num])
         during_the_pandemic_total += float(during_the_pandemic_data.iloc[industries_and_indexes[industry], col_num])
     
@@ -38,5 +38,4 @@ def create_dataframe(industry: str) -> p.DataFrame:
     
     return new_dataframe
     
-
 
