@@ -39,4 +39,17 @@ def create_dataframe(industry: str) -> p.DataFrame:
     return new_dataframe
     
 
+def create_table_value(dataframe: p.DataFrame) -> list[tuple[str, float]]:
+    """
+    Returns the values of the dataframe as a list of tuples.
+    """
+    new_frame = dataframe.to_dict()
+    
+    data_list = []
+    for item in new_frame:
+        data_list.append((item, new_frame[item]['values']))
+    
+    return data_list
 
+
+    
