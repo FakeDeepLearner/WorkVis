@@ -1,0 +1,67 @@
+\documentclass[fontsize=11pt]{article}  
+\usepackage{amsmath}  
+\usepackage[utf8]{inputenc}  
+\usepackage[margin=0.75in]{geometry}  
+\usepackage{hyperref}  
+  
+\title{  
+The Effect of COVID 19 on Working Hours of Industries in Canada}  
+\author{Eren Aydin, Thomas Wu, Sheldon Dacon, Khizer Ahmad}  
+\date{Tuesday, December 14, 2021}  
+  
+\begin{document}  
+\maketitle  
+  
+\section*{Introduction}  
+The global effects of COVID-19 does not need much introduction. Without a doubt, the pandemic has impacted every aspect of our lives to some level. It caused many changes in the dynamics of how the world operates; some for the better, some for the worse.   
+  
+One of the most affected markets was the job market. COVID changed a lot of things such as including how people work, what jobs they prefer, their work-life balance and so on. The goal of this project is to investigate what changes COVID-19 caused in the working hours of the industries in Canada. That is, how was the state of the working hours before the pandemic (defined as January-December 2019) and during the pandemic (defined as January 2020- December 2020).  
+  
+The question we seek to answer is:   
+\textbf{``How has COVID-19 affected the working hours of Specific Canadian industries?"}  
+  
+  
+\section*{Dataset Description}  
+We will be using 2 datasets for this project. Both of the datasets contain the monthly average of working hours (weekly) of each industry in Canada. The dat is sourced from the Government of Canada, more specifically, statistics Canada. The data is in a csv format. One of the datasets contains the data from 2019, and the other contains the same data from 2020. Both datasets also contain the monthly average of all of the industries combined. We will not be looking at the grand total, however, instead focusing on the industries individually.   
+ 
+ 
+ % I need to find out if hours are self reported or not, government website doesn't give any info about where they get their data%
+  
+\section*{Computational Overview}  
+The computations we plan to do and their explanations are as follows (They are in no particular order.):  
+  
+Our Project is divided into 3 python files that each have a specfic function.
+  
+project part 1: The purpose here is to plot the graph according to the selected industry regarding the data from before the pandemic (2019) and uring the pandemic (2020) the two year will correspond o 2 different graphs and the x-axis will represent the average working hour while the y-axis
+will be representing in the form of year and month. By creating line graphs for each industry before and during the pandemic, we illustrate their general pattern, i.e  much they tend to change over the course of each month. 
+
+first, the function will use the pandas library and use the read\_csv methold to create the DataFrame from the csv dataset. our program then stores this in
+two variables.
+We then created dictionary that map each industry  to the following data set from the DataFrame.
+ % is this right?%
+
+we then created 2 small helper functions called points\_of\_during\_pandemic
+and points\_of\_pre\_pandemic. They work by creating the list of points from the dataset based on the chosen industry's average working hours and month before the pandemic for \_of\_pre\_pandemic or after the pandemic for points\_of\_during\_pandemic
+
+Our main function is called plotting\_the\_graph. Its a rather complex algorithm 
+  
+
+  
+We will be using the pandas library to make the necessary data tables (Mainly on plan 2.)  and plotly for plotting the line graphs (Mainly on plan   
+\section{References}  
+  
+
+  
+ \section*{instructions}  
+ 
+\href{ https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410003601 }{ Government of Canada, Statistics Canada. Actual Hours Worked by Industry, Monthly, Unadjusted for Seasonality, Government of Canada, Statistics Canada, 8 Oct. 2021, https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410003601. }  
+
+  
+  
+% NOTE: LaTeX does have a built-in way of generating references automatically,  
+% but it's a bit tricky to use so we STRONGLY recommend writing your references  
+% manually, using a standard academic format like APA or MLA.  
+% (E.g., https://owl.purdue.edu/owl/research_and_citation/apa_style/apa_formatting_and_style_guide/general_format.html)  
+  
+\end{document}  
+About MarkUs
