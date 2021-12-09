@@ -5,7 +5,7 @@
 \usepackage{hyperref}  
   
 \title{  
-The Effect of COVID 19 on Working Hours of Industries in Canada}  
+The Effect of COVID 19 in Working Hours in Different Industries Across Canada}  
 \author{Eren Aydin, Thomas Wu, Sheldon Dacon, Khizer Ahmad}  
 \date{Tuesday, December 14, 2021}  
   
@@ -32,10 +32,10 @@ The computations we plan to do and their explanations are as follows (They are i
   
 Our Project is divided into 3 python files that each have a specfic function.
   
-project part 1: The purpose here is to plot the graph according to the selected industry regarding the data from before the pandemic (2019) and uring the pandemic (2020) the two year will correspond o 2 different graphs and the x-axis will represent the average working hour while the y-axis
+project\_part 1: The purpose here is to plot the graph according to the selected industry regarding the data from before the pandemic (2019) and during the pandemic (2020) the two year will correspond o 2 different graphs and the x-axis will represent the average working hour while the y-axis
 will be representing in the form of year and month. By creating line graphs for each industry before and during the pandemic, we illustrate their general pattern, i.e  much they tend to change over the course of each month. 
 
-first, the function will use the pandas library and use the read\_csv methold to create the DataFrame from the csv dataset. our program then stores this in
+first, the function will use the pandas library and use the read\_csv method to create the DataFrame from the csv dataset. our program then stores this in
 two variables.
 We then created dictionary that map each industry  to the following data set from the DataFrame.
  % is this right?%
@@ -43,18 +43,66 @@ We then created dictionary that map each industry  to the following data set fro
 we then created 2 small helper functions called points\_of\_during\_pandemic
 and points\_of\_pre\_pandemic. They work by creating the list of points from the dataset based on the chosen industry's average working hours and month before the pandemic for \_of\_pre\_pandemic or after the pandemic for points\_of\_during\_pandemic
 
-Our main function is called plotting\_the\_graph. Its a rather complex algorithm 
-  
+Our main function is called plotting\_the\_graph. Its a rather complex algorithm that incorporates 3 for loops and many functions from the matplotlib that creates a graph based on the industry chosen. Unlike many simpler implementations of graphs using mathplotlib, in the function, the name will be changed so that all word will capitalize their first letter for every industry to make the output look more polished and professional.
 
-  
-We will be using the pandas library to make the necessary data tables (Mainly on plan 2.)  and plotly for plotting the line graphs (Mainly on plan   
-\section{References}  
-  
+This function works by first Getting the list of coordinates of the chosen industry by using helper functions. The the If the first alphabet of the word is lower cased. If it is, then the for loop changes it to upper case,the first word of the industry should always have an uppercase letter.
 
+%Im gonna skip taking about the accumulators%
+
+then this function uses matplotlib functions to set up the correct parameters for the graph by using the mathplotlib.plot, mathplotlib.sub\_plot, mathplotlib.setgp and more, we can create a graph with labels that start with a uppercase letter, thanks to the for loop that we created
+
+
+\textbf{project\_part 2.}
+
+In this part created a function that created doing tables showing how much the working hours changed both in numbers and in percentages. For example, a table will the working hours of an industry for January 2019 and January 2020, and then will include how much the working hours changed in numbers and in percentages. This will allow us to make an estimate of how much popularity the industry gained or lost with the introduction of the pandemic,
+
+We started by importing the dictionary we created in part 1
+
+first, the function will use the pandas library and use the read\_csv method to create the DataFrame from the csv dataset. our program then stores this in
+two variables.
+We then created dictionary that map each industry  to the following data set from the DataFrame.
+
+We then created a function called create\_dataframe which creates a datadrame using the imported dictionary. the DataFrame where rows and columns are 0-indexed by default. we the use the same for loop from part in which the first letters are all capitalised
+
+
+
+project\_part 3.
+
+We used 
   
- \section*{instructions}  
+3.Calculating the differences of the yearly averages of working hours for each industry pre pandemic and during the pandemic. This will allow us to further illustrate the sectors that gained or lost popularity, or stated relatively neutral. If our result is positive, we can say that the industry gained popularity with how much it gained popularity depending on the magnitude of our result, and vice versa. This will make it easy to visualize the general trend the working hours followed for each respective industry.  
+  
+4.Highlighting the big enough discrepancies in the average working hours both before and during the pandemic. This will allow us to highlight the industries' relative performances, and how much they gained or lost popularity compared to other industries. Ultimately, this will allow us to conclude the general state of the working hours before and during the pandemic.  
+  
+  
+  
+\section*{Instructions} 
  
-\href{ https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410003601 }{ Government of Canada, Statistics Canada. Actual Hours Worked by Industry, Monthly, Unadjusted for Seasonality, Government of Canada, Statistics Canada, 8 Oct. 2021, https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410003601. }  
+\textbf{step 1.}
+download all of the libraries under requirements.txt. These libraries are required in order for our functions to run normally.
+ 
+\textbf{step 2.}
+download the 2 datasets from the government of Canada from the url in markus, be sure to save them in a separate folder and \textbf{do NOT change the name of the CSV file}. If you do change the names of the files, the function will not work.
+ 
+\textbf{step 3.} run the file called main.py. 
+you should see and interactive screen with buttons that you can push, and interact with. Should should not be receiving any errors, if you do get an error, check to make sure you did not change the names of the CSV files.
+ 
+\section*{Changes Made From feedback}  
+
+We received mostly positive feedback from the TAs after we submitted our proposal. aside from from minor formatting issues, the main concern of the TAs was the the scope of our topic. Our original idea was more focused on the change in the work hours of all Canadian industries.The TAs suggested that we focus more on the changes in one industry then all of them at once. They also wanted us to give more detail on where the data came from specifically how the data was measured.
+ 
+ 
+ 
+ 
+ 
+\section*{Discussion} 
+
+
+
+
+\section{References}
+ 
+\href{ https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410003601 }{ Government of Canada, Statistics Canada. Actual Hours Worked by Industry, Monthly, Unadjusted for Seasonality, Government of Canada, Statistics Canada, 8 Oct. 2021, https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410003601. } 
 
   
   
