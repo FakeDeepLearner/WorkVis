@@ -119,6 +119,13 @@ will be representing in the form of year and month. Through the data we saw that
 
 We did run into some minor limitations specifically with calculating the percentage change in different industries. we found it very difficult to create a table using mathplotlib directly from data frame values. We even seriously considered using another libraries  to create the table. Mathplotlib is mainly used for graphing and not really created for just creating tables with an accompanying graph. We eventually found a solution without using additional libraries. We eventually found a solution through trial and error that worked by creating a helper function that turned the data frame values into a list of tuples to be processed instead of a data frame value. The solution worked and this small helper function is an integral part of our part 2 implementation.
 
+Another small issue that we encountered was finding the right axis sizes and labels to make our GUI look as ascetically pleasing as possible. We experimented with various colors and sizes but we noticed that not all of the words in the visualizations was capitalised. Users would see labels such as ``Educational services" instead of ``Educational Services" so we created a unique for loop that iterates through every label and ensures that every word is capitalised
+
+\medskip
+
+Our next steps will be expanding our comparison program to compare the differences in working hours between any two years rather than just 2019 and 2020. This will require a considerable amount of modification to our code as it some functions only take values from January to December of only 2020 or 2019. If we can make further modifications to the code to expand the years that we can analyse, we can make even more insights and attempt to see if there is a pattern of increasing or decreasing  work hours over a range of years. This information can be used to forecast the future job market which in turn could be used to forecast the future economy which is important for government policy makers for various reasons such as increasing or decreasing the mortgage rate to simulate the economy.
+
+Jobs are an integral part of not only of economy, but also our society through our insights into the differences in working hours across different industries we have learned the importance of proper programming skills, government systems, and data acquisition. These skills will not only aid in our university journey, but also beyond university where we will use these skills to create change.
 
 
 \section{References}
