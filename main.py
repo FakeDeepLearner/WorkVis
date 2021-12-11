@@ -267,7 +267,7 @@ matplotlib.use('TkAgg')
 
 # quit_button = Button(frame, text="Close the program", command=lambda: root.destroy(), bg='light yellow')
 # quit_button.grid(row=3, column=4)
-# The quit button
+# # The quit button
 
 # def display_dataframe(industry: str) -> None:
 #     """
