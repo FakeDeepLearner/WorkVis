@@ -95,7 +95,8 @@ download all of the libraries under requirements.txt. These libraries are requir
 \textbf{step 2.}
 download the 2 datasets from the government of Canada from the url in markus, be sure to save them in a separate folder and \textbf{do NOT change the name of the CSV file}. If you do change the names of the files, the function will not work.
  
-\textbf{step 3.} run the file called main.py. 
+\textbf{step 3.} Open the main.py file, and uncomment part 1
+run the file called main.py in your IDE.
 you should see and interactive screen with buttons that you can push, and interact with. Should should not be receiving any errors, if you do get an error, check to make sure you did not change the names of the CSV files.
  
 \section*{Changes Made From Feedback}  
@@ -112,9 +113,11 @@ The functions that we created helped to further explore various modules as well 
 from before the pandemic (2019) and during the pandemic (2020) with the x-axis will represent the average working hour while the y-axis
 will be representing in the form of year and month. Through the data we saw that for nearly every month in 2020, the reported working hours were less then the year before, which was before the global pandemic. This trend is very obvious as shown in our interactive GUI. Some industries show a greater change in hours than others by simply looking at the height differences in the bars. Some examples include accommodation and food services. In part 2 and 3 we expanded upon this idea and included functions that would calculate the percentage difference in the average working hours during and before the pandemic. This percentage difference clearly demonstrated a change between the two years which is solid proof that the pandemic did affect the report work hours.  (might add some more?)
 
-We did run into some minor limitations specifically with calculating the percentage change in different industries. we found it very difficult to create a table using mathplotlib
+
+\medskip
 
 
+We did run into some minor limitations specifically with calculating the percentage change in different industries. we found it very difficult to create a table using mathplotlib directly from data frame values. We even seriously considered using another libraries  to create the table. Mathplotlib is mainly used for graphing and not really created for just creating tables with an accompanying graph. We eventually found a solution without using additional libraries. We eventually found a solution through trial and error that worked by creating a helper function that turned the data frame values into a list of tuples to be processed instead of a data frame value. The solution worked and this small helper function is an integral part of our part 2 implementation.
 
 
 
