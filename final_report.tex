@@ -18,11 +18,14 @@ The global effects of COVID-19 does not need much introduction. Without a doubt,
 One of the most affected markets was the job market. COVID changed a lot of things such as including how people work, what jobs they prefer, their work-life balance and so on. The goal of this project is to investigate what changes COVID-19 caused in the working hours of the industries in Canada. That is, how was the state of the working hours before the pandemic (defined as January-December 2019) and during the pandemic (defined as January 2020- December 2020).  
   
 The question we seek to answer is:   
-\textbf{``How has COVID-19 affected the working hours of Specific Canadian industries?"}  
+\textbf{``How has COVID-19 affected the working hours of specific Canadian industries?"}  
   
   
 \section*{Dataset Description}  
-We will be using 2 datasets for this project. Both of the datasets contain the monthly average of working hours (weekly) of each industry in Canada. The dat is sourced from the Government of Canada, more specifically, statistics Canada. The data is in a csv format. One of the datasets contains the data from 2019, and the other contains the same data from 2020. Both datasets also contain the monthly average of all of the industries combined. We will not be looking at the grand total, however, instead focusing on the industries individually.   
+We will be using 2 datasets for this project. Both of the datasets contain the monthly average of working hours (weekly) of each industry in Canada. The data is sourced from the Government of Canada, more specifically, statistics Canada. The data is in a CSV format. One of the datasets contains the data from 2019, and the other contains the same data from 2020. Both datasets also contain the monthly average of all of the industries combined. We will not be looking at the grand total, however, instead focusing on the industries individually.   
+ 
+ 
+
  
  
  % I need to find out if hours are self reported or not, government website doesn't give any info about where they get their data%
@@ -31,9 +34,14 @@ We will be using 2 datasets for this project. Both of the datasets contain the m
 The computations we plan to do and their explanations are as follows (They are in no particular order.):  
   
 Our Project is divided into 3 python files that each have a specfic function.
-  
-project\_part 1: The purpose here is to plot the graph according to the selected industry regarding the data from before the pandemic (2019) and during the pandemic (2020) the two year will correspond o 2 different graphs and the x-axis will represent the average working hour while the y-axis
+
+\medskip   
+
+\textbf{project\_part 1:} The purpose here is to plot the graph according to the selected industry regarding the data from before the pandemic (2019) and during the pandemic (2020) the two year will correspond o 2 different graphs and the x-axis will represent the average working hour while the y-axis
 will be representing in the form of year and month. By creating line graphs for each industry before and during the pandemic, we illustrate their general pattern, i.e  much they tend to change over the course of each month. 
+
+\medskip 
+
 
 first, the function will use the pandas library and use the read\_csv method to create the DataFrame from the csv dataset. our program then stores this in
 two variables.
@@ -51,6 +59,7 @@ This function works by first Getting the list of coordinates of the chosen indus
 
 then this function uses matplotlib functions to set up the correct parameters for the graph by using the mathplotlib.plot, mathplotlib.sub\_plot, mathplotlib.setgp and more, we can create a graph with labels that start with a uppercase letter, thanks to the for loop that we created
 
+\medskip 
 
 \textbf{project\_part 2.}
 
@@ -62,19 +71,21 @@ first, the function will use the pandas library and use the read\_csv method to 
 two variables.
 We then created dictionary that map each industry  to the following data set from the DataFrame.
 
-We then created a function called create\_dataframe which creates a datadrame using the imported dictionary. the DataFrame where rows and columns are 0-indexed by default. we the use the same for loop from part in which the first letters are all capitalised
+We then created a function called create\_dataframe which creates a datadrame using the imported dictionary. the DataFrame where rows and columns are 0-indexed by default. we the use the same for loop from part in which the first letters are all capitalised.
+
+(will add more I'm thinking about shortening this part)
 
 
 
-project\_part 3.
+\medskip 
 
-We used 
+\textbf{project\_part 3.}
+
+in part 3.
+
+the goal of part 3 is to Calculating the differences of the yearly averages of working hours for each industry pre pandemic and during the pandemic. This will allow us to further illustrate the sectors that gained or lost popularity, or stated relatively neutral. If our result is positive, we can say that the industry gained popularity with how much it gained popularity depending on the magnitude of our result, and vice versa.
   
-3.Calculating the differences of the yearly averages of working hours for each industry pre pandemic and during the pandemic. This will allow us to further illustrate the sectors that gained or lost popularity, or stated relatively neutral. If our result is positive, we can say that the industry gained popularity with how much it gained popularity depending on the magnitude of our result, and vice versa. This will make it easy to visualize the general trend the working hours followed for each respective industry.  
-  
-4.Highlighting the big enough discrepancies in the average working hours both before and during the pandemic. This will allow us to highlight the industries' relative performances, and how much they gained or lost popularity compared to other industries. Ultimately, this will allow us to conclude the general state of the working hours before and during the pandemic.  
-  
-  
+ (will add code analysis later)
   
 \section*{Instructions} 
  
@@ -87,7 +98,7 @@ download the 2 datasets from the government of Canada from the url in markus, be
 \textbf{step 3.} run the file called main.py. 
 you should see and interactive screen with buttons that you can push, and interact with. Should should not be receiving any errors, if you do get an error, check to make sure you did not change the names of the CSV files.
  
-\section*{Changes Made From feedback}  
+\section*{Changes Made From Feedback}  
 
 We received mostly positive feedback from the TAs after we submitted our proposal. aside from from minor formatting issues, the main concern of the TAs was the the scope of our topic. Our original idea was more focused on the change in the work hours of all Canadian industries.The TAs suggested that we focus more on the changes in one industry then all of them at once. They also wanted us to give more detail on where the data came from specifically how the data was measured.
  
@@ -96,6 +107,13 @@ We received mostly positive feedback from the TAs after we submitted our proposa
  
  
 \section*{Discussion} 
+
+The functions that we created helped to further explore various modules as well as provide insights into the affects of Covid-19 using empirical data. By implementing functions in our project, we have accurately answered our original question on How has COVID-19 affected the working hours of specific Canadian industries? In part 1 of our project the functions we created 2 graphs according to the selected industry regarding the data
+from before the pandemic (2019) and during the pandemic (2020) with the x-axis will represent the average working hour while the y-axis
+will be representing in the form of year and month. Through the data we saw that for nearly every month in 2020, the reported working hours were less then the year before, which was before the global pandemic. This trend is very obvious as shown in our interactive GUI. Some industries show a greater change in hours than others by simply looking at the height differences in the bars. Some examples include accommodation and food services. In part 2 and 3 we expanded upon this idea and included functions that would calculate the percentage difference in the average working hours during and before the pandemic. This percentage difference clearly demonstrated a change between the two years which is solid proof that the pandemic did affect the report work hours.  (might add some more?)
+
+We did run into some minor limitations specifically with calculating the percentage change in different industries. we found it very difficult to create a table using mathplotlib
+
 
 
 
