@@ -10,6 +10,8 @@ import project_part_1 as proj1
 
 pre_pandemic_data = p.read_csv('Datasets/pre_pandemic.csv')
 during_the_pandemic_data = p.read_csv('Datasets/during_the_pandemic (1).csv')
+# (Change the input string if the file names or the folder names are different.)
+
 
 industries_and_indexes = proj1.industry_and_its_index
 

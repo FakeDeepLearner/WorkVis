@@ -22,7 +22,7 @@ The question we seek to answer is:
   
   
 \section*{Dataset Description}  
-We will be using 2 datasets for this project. Both of the datasets contain the monthly average of working hours (weekly) of each industry in Canada. The data is sourced from the Government of Canada, more specifically, statistics Canada. The data is in a CSV format. One of the datasets contains the data from 2019, and the other contains the same data from 2020. Both datasets also contain the monthly average of all of the industries combined. We will not be looking at the grand total, however, instead focusing on the industries individually.   
+We will be using 2 datasets for this project. Both of the datasets contain the monthly average of working hours (monthly) of each industry in Canada. The data is sourced from the Government of Canada, more specifically, statistics Canada. The data is in a CSV format. One of the datasets contains the data from 2019, and the other contains the same data from 2020. Both datasets also contain the monthly average of all of the industries combined. We will not be looking at the grand total, however, instead focusing on the industries individually.   
  
  
 
@@ -33,7 +33,7 @@ We will be using 2 datasets for this project. Both of the datasets contain the m
 \section*{Computational Overview}  
 The computations we plan to do and their explanations are as follows (They are in no particular order.):  
   
-Our Project is divided into 3 python files that each have a specfic function.
+Our Project is divided into 3 python files that each have a specific function.
 
 \medskip   
 
@@ -46,18 +46,18 @@ will be representing in the form of year and month. By creating line graphs for 
 first, the function will use the pandas library and use the read\_csv method to create the DataFrame from the csv dataset. our program then stores this in
 two variables.
 We then created dictionary that map each industry  to the following data set from the DataFrame.
- % is this right?%
+
 
 we then created 2 small helper functions called points\_of\_during\_pandemic
 and points\_of\_pre\_pandemic. They work by creating the list of points from the dataset based on the chosen industry's average working hours and month before the pandemic for \_of\_pre\_pandemic or after the pandemic for points\_of\_during\_pandemic
 
-Our main function is called plotting\_the\_graph. Its a rather complex algorithm that incorporates 3 for loops and many functions from the matplotlib that creates a graph based on the industry chosen. Unlike many simpler implementations of graphs using mathplotlib, in the function, the name will be changed so that all word will capitalize their first letter for every industry to make the output look more polished and professional.
+Our main function is called plotting\_the\_graph. Its a rather complex algorithm that incorporates 3 for loops and many functions from the matplotlib that creates a graph based on the industry chosen. Unlike many simpler implementations of graphs using matplotlib, in the function, the name will be changed so that all word will capitalize their first letter for every industry to make the output look more polished and professional.
 
 This function works by first Getting the list of coordinates of the chosen industry by using helper functions. The the If the first alphabet of the word is lower cased. If it is, then the for loop changes it to upper case,the first word of the industry should always have an uppercase letter.
 
 %Im gonna skip taking about the accumulators%
 
-then this function uses matplotlib functions to set up the correct parameters for the graph by using the mathplotlib.plot, mathplotlib.sub\_plot, mathplotlib.setgp and more, we can create a graph with labels that start with a uppercase letter, thanks to the for loop that we created
+then this function uses matplotlib functions to set up the correct parameters for the graph by using the matplotlib.plot, matplotlib.sub\_plot, matplotlib.setgp and more, we can create a graph with labels that start with a uppercase letter, thanks to the for loop that we created
 
 \medskip 
 
@@ -90,23 +90,24 @@ the goal of part 3 is to Calculating the differences of the yearly averages of w
 \section*{Instructions} 
  
 \textbf{step 1.}
-download all of the libraries under requirements.txt. These libraries are required in order for our functions to run normally.
+download all of the libraries under requirements.txt. These libraries are required in order for our functions to run normally. These libraries should come with the python installation. If you run into errors, you can try installing them manually. Open a command prompt and type "pip install [package name]" (without the quotation marks). If this doesn't work, you can try  repairing your Python installation. Open the Python Launcher, and then click repair on the main menu. Don't worry, you won't lose any files or configurations. \\
  
 \textbf{step 2.}
-download the 2 datasets from the government of Canada from the url in markus, be sure to save them in a separate folder and \textbf{do NOT change the name of the CSV file}. If you do change the names of the files, the function will not work.
+download the 2 datasets from the government of Canada from the url in markus, be sure to save them in a separate folder and \textbf{do NOT change the name of the CSV file}. If you do change the names of the files, the function will not work. Save the csv files in the same directory as the project files, preferrably in a different folder, If you decide to change the name of the folder or the files, make sure you update the input of the functions that read the files appropriately (they will be commented to make it easier for you to spot them.)  \\
  
 \textbf{step 3.} Open the main.py file, and uncomment part 1
 run the file called main.py in your IDE.
-you should see and interactive screen with buttons that you can push, and interact with. Should should not be receiving any errors, if you do get an error, check to make sure you did not change the names of the CSV files.
+you should see and interactive screen with buttons that you can push, and interact with. 
+Do the same things for parts 2 and 3. \textbf{MAKE SURE YOU UNCOMMENT AND RUN ONE PART AT A TIME}. Otherwise, the code will not work. When you run one part, make sure to uncomment it before moving on to the next one. (You can uncomment multiple lines at ones by selecting the lines you want to uncomment, then pressing \textbf{CTRL + K + CTRL +U}. Similarly, you can press \textbf{CTRL + K + CTRL + C} to comment multiple lines at once.)
  
 \section*{Changes Made From Feedback}  
 
-We received mostly positive feedback from the TAs after we submitted our proposal. aside from from minor formatting issues, the main concern of the TAs was the the scope of our topic. Our original idea was more focused on the change in the work hours of all Canadian industries.The TAs suggested that we focus more on the changes in one industry then all of them at once. They also wanted us to give more detail on where the data came from specifically how the data was measured.
+We received mostly positive feedback from the TAs after we submitted our proposal. aside from from minor formatting issues, the main concern of the TAs was the the scope of our topic. Our original idea was more focused on the change in the work hours of all Canadian industries.The TAs suggested that we focus more on the changes in one industry then all of them at once. They also wanted us to give more detail on where the data came from specifically how the data was measured. \\
+
+Firstly, we decided to omit part 4 of the proposal entirely, as we decided it was not really feasible to implement it in python, and we felt it would do more harm than good because it brought no new results. \\
  
- 
- 
- 
- 
+Secondly, and most importantly, we narrowed down the subjects of our project to 9 industries, rather than the previous 18.  The  reason why we chose these specific ones is that, we decided that we should choose industries that we could have a reasonable guess about how they performed, to more realiably compare our intuition with our actual findings. For example, we decided that educational services should be one of the industries because we were able to reasonably think that since education went online, nothing much would change. Similarly, we expected that forestry, fishing, mining, quarrying, oil and gas would stay relatively the same as well, since natural resources are a big part of the Canadian economy. (Crude oil is Canada's top export, generating 69 Billion USD of revenue in 2020).\\
+
 \section*{Discussion} 
 
 The functions that we created helped to further explore various modules as well as provide insights into the affects of Covid-19 using empirical data. By implementing functions in our project, we have accurately answered our original question on How has COVID-19 affected the working hours of specific Canadian industries? In part 1 of our project the functions we created 2 graphs according to the selected industry regarding the data
@@ -119,7 +120,7 @@ will be representing in the form of year and month. Through the data we saw that
 
 We did run into some minor limitations specifically with calculating the percentage change in different industries. we found it very difficult to create a table using mathplotlib directly from data frame values. We even seriously considered using another libraries  to create the table. Mathplotlib is mainly used for graphing and not really created for just creating tables with an accompanying graph. We eventually found a solution without using additional libraries. We eventually found a solution through trial and error that worked by creating a helper function that turned the data frame values into a list of tuples to be processed instead of a data frame value. The solution worked and this small helper function is an integral part of our part 2 implementation.
 
-Another small issue that we encountered was finding the right axis sizes and labels to make our GUI look as ascetically pleasing as possible. We experimented with various colors and sizes but we noticed that not all of the words in the visualizations was capitalised. Users would see labels such as ``Educational services" instead of ``Educational Services" so we created a unique for loop that iterates through every label and ensures that every word is capitalised
+Another small issue that we encountered was finding the right axis sizes and labels to make our GUI look as ascetically pleasing as possible. We experimented with various colors and sizes but we noticed that not all of the words in the visualizations was capitalised. Users would see labels such as ``Educational services" instead of ``Educational Services" so we created a unique for loop that iterates through every label and ensures that every word is capitalise.
 
 \medskip
 
