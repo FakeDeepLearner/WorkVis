@@ -19,7 +19,7 @@ import project_part_3 as proj3
 
 matplotlib.use('TkAgg')
 
-
+ 
 ########
 # Part 1
 ########
