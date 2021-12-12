@@ -1,5 +1,13 @@
 """
 A module that contains the code to run the project
+
+Uncomment each part to run each section of the project.
+Synopsis:
+    Part 1: Graphs the line graph of both pre-pandemic(2021) and during pandemic (2020)
+            based on the chosen industry.
+    Part 2: Creates a table on the difference in percentage and floats based on the chosen
+            industries and time period.
+    Part 3: Creates a table based on the yearly average working hours for the chosen industry.
 """
 import matplotlib
 from tkinter import *
@@ -15,89 +23,89 @@ matplotlib.use('TkAgg')
 ########
 # Part 1
 ########
-#
-# root = Tk()
-# root.overrideredirect(True)
-# root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))
-# root.config(bg='#73C2FB')
-# # Displays the window in full screen and set the background color
-#
-# frame = Frame(root)
-# frame.pack()
-# frame.config(bg='#73C2FB')
-#
-# middleframe = Frame(root)
-#
-#
-# bottomframe = Frame(root)
-# bottomframe.pack(side=LEFT)
-#
-# canvas = None
-#
-# # Buttons:
-#
-# button_of_agriculture = Button(frame, text="Agriculture",
-#                                command=lambda: display("Agriculture"), padx=15, bg='light blue')
-# button_of_agriculture.grid(row=0, column=0)     # Placing the buttons on the screen
-#
-# button_of_FFMQOG = Button(frame, text="Forestry, fishing, mining, quarrying, oil and gas",
-#                           command=lambda: display("Forestry, fishing, mining, quarrying, oil and gas"), padx=15,
-#                           bg='light blue')
-# button_of_FFMQOG.grid(row=0, column=1)
-#
-# button_of_construction = Button(frame, text="Construction",
-#                                 command=lambda: display("Construction"), padx=15, bg='light blue')
-# button_of_construction.grid(row=0, column=2)
-#
-# button_of_wholesale = Button(frame, text="Wholesale and retail trade",
-#                              command=lambda: display("Wholesale and retail trade"), padx=15, bg='light blue')
-# button_of_wholesale.grid(row=0, column=3)
-#
-# button_of_transportation_and_warehousing = Button(frame, text="Transportation and warehousing",
-#                                                   command=lambda: display("Transportation and warehousing"), padx=15,
-#                                                   bg='light blue')
-# button_of_transportation_and_warehousing.grid(row=0, column=4)
-#
-# button_of_edicational_services = Button(frame, text="Education",
-#                                         command=lambda: display("Educational services"), padx=15, bg='light blue')
-# button_of_edicational_services.grid(row=0, column=5)
-#
-# button_of_health_care = Button(frame, text="Health care and social assistance",
-#                                command=lambda: display("Health care and social assistance"), padx=15, bg='light blue')
-# button_of_health_care.grid(row=0, column=6)
-#
-# button_of_accomodation_and_food = Button(frame, text="Accomodation and food services",
-#                                          command=lambda: display("Accommodation and food services"), padx=15,
-#                                          bg='light blue')
-# button_of_accomodation_and_food.grid(row=0, column=7)
-#
-# button_of_public_administration = Button(frame, text="Public administration",
-#                                          command=lambda: display("Public administration"), padx=15, bg='light blue')
-# button_of_public_administration.grid(row=0, column=8)
-#
-# quit_button = Button(frame, text="Close the program", command=root.destroy, bg='light yellow')  # The quit button
-# quit_button.grid(row=10, column=4)
-#
-#
-# def display(industry: str) -> None:
-#     """
-#     Display the graph of the industry on the user panel.
-#     """
-#     global canvas, bottomframe
-#
-#     if canvas:        # Removing the existing graph (if there is any)
-#         bottomframe.destroy()
-#         bottomframe = Frame(root)
-#         bottomframe.pack(side=BOTTOM)
-#
-#     # Generating the figure and a canvas to display it
-#     figure = proj1.plotting_the_graph(industry)
-#     canvas = FigureCanvasTkAgg(figure, master=bottomframe)
-#
-#     canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=True)  # Displaying the figure
-#
-#
-# root.mainloop()
+
+root = Tk()
+root.overrideredirect(True)
+root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))
+root.config(bg='#73C2FB')
+# Displays the window in full screen and set the background color
+
+frame = Frame(root)
+frame.pack()
+frame.config(bg='#73C2FB')
+
+middleframe = Frame(root)
+
+
+bottomframe = Frame(root)
+bottomframe.pack(side=LEFT)
+
+canvas = None
+
+# Buttons:
+
+button_of_agriculture = Button(frame, text="Agriculture",
+                               command=lambda: display("Agriculture"), padx=15, bg='light blue')
+button_of_agriculture.grid(row=0, column=0)     # Placing the buttons on the screen
+
+button_of_FFMQOG = Button(frame, text="Forestry, fishing, mining, quarrying, oil and gas",
+                          command=lambda: display("Forestry, fishing, mining, quarrying, oil and gas"), padx=15,
+                          bg='light blue')
+button_of_FFMQOG.grid(row=0, column=1)
+
+button_of_construction = Button(frame, text="Construction",
+                                command=lambda: display("Construction"), padx=15, bg='light blue')
+button_of_construction.grid(row=0, column=2)
+
+button_of_wholesale = Button(frame, text="Wholesale and retail trade",
+                             command=lambda: display("Wholesale and retail trade"), padx=15, bg='light blue')
+button_of_wholesale.grid(row=0, column=3)
+
+button_of_transportation_and_warehousing = Button(frame, text="Transportation and warehousing",
+                                                  command=lambda: display("Transportation and warehousing"), padx=15,
+                                                  bg='light blue')
+button_of_transportation_and_warehousing.grid(row=0, column=4)
+
+button_of_edicational_services = Button(frame, text="Education",
+                                        command=lambda: display("Educational services"), padx=15, bg='light blue')
+button_of_edicational_services.grid(row=0, column=5)
+
+button_of_health_care = Button(frame, text="Health care and social assistance",
+                               command=lambda: display("Health care and social assistance"), padx=15, bg='light blue')
+button_of_health_care.grid(row=0, column=6)
+
+button_of_accomodation_and_food = Button(frame, text="Accomodation and food services",
+                                         command=lambda: display("Accommodation and food services"), padx=15,
+                                         bg='light blue')
+button_of_accomodation_and_food.grid(row=0, column=7)
+
+button_of_public_administration = Button(frame, text="Public administration",
+                                         command=lambda: display("Public administration"), padx=15, bg='light blue')
+button_of_public_administration.grid(row=0, column=8)
+
+quit_button = Button(frame, text="Close the program", command=root.destroy, bg='light yellow')  # The quit button
+quit_button.grid(row=10, column=4)
+
+
+def display(industry: str) -> None:
+    """
+    Display the graph of the industry on the user panel.
+    """
+    global canvas, bottomframe
+
+    if canvas:        # Removing the existing graph (if there is any)
+        bottomframe.destroy()
+        bottomframe = Frame(root)
+        bottomframe.pack(side=BOTTOM)
+
+    # Generating the figure and a canvas to display it
+    figure = proj1.plotting_the_graph(industry)
+    canvas = FigureCanvasTkAgg(figure, master=bottomframe)
+
+    canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=True)  # Displaying the figure
+
+
+root.mainloop()
 # ######
 # Part 2
 # ######
@@ -212,78 +220,78 @@ matplotlib.use('TkAgg')
 #########
 # Part 3
 #########
-#
-# root = Tk()
-# root.overrideredirect(True)
-# root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))
-# root.config(bg='#73C2FB')
-#
-# frame = Frame(root)
-# frame.pack()
-# frame.config(bg='#73C2FB')
-#
-# bottomframe = Frame(root)
-# bottomframe.pack(side=LEFT)
-#
-# canvas = None
-#
-# button_of_agriculture = Button(frame, text="Agriculture",
-#                                command=lambda: display_dataframe("Agriculture"))
-# button_of_agriculture.grid(row=0, column=0)     # Placing the buttons on the screen
-#
-# button_of_FFMQOG = Button(frame, text="Forestry, Fishing, Mining, Quarrying, Oil and Gas",
-#                           command=lambda: display_dataframe("Forestry, fishing, mining, quarrying, oil and gas"))
-# button_of_FFMQOG.grid(row=0, column=1)
-#
-# button_of_construction = Button(frame, text="Construction",
-#                                 command=lambda: display_dataframe("Construction"))
-# button_of_construction.grid(row=0, column=2)
-#
-# button_of_wholesale = Button(frame, text="Wholesale and Retail Trade",
-#                              command=lambda: display_dataframe("Wholesale and retail trade"))
-# button_of_wholesale.grid(row=0, column=3)
-#
-# button_of_transportation_and_warehousing = Button(frame, text="Transportation and Warehousing",
-#                                                   command=lambda: display_dataframe("Transportation and warehousing"))
-# button_of_transportation_and_warehousing.grid(row=0, column=4)
-#
-# button_of_edicational_services = Button(frame, text="Education",
-#                                         command=lambda: display_dataframe("Educational services"))
-# button_of_edicational_services.grid(row=0, column=5)
-#
-# button_of_health_care = Button(frame, text="Health Care and Social Assistance",
-#                                command=lambda: display_dataframe("Health care and social assistance"))
-# button_of_health_care.grid(row=0, column=6)
-#
-# button_of_accomodation_and_food = Button(frame, text="Accommodation and Food Services",
-#                                          command=lambda: display_dataframe("Accommodation and food services"))
-# button_of_accomodation_and_food.grid(row=0, column=7)
-#
-# button_of_public_administration = Button(frame, text="Public Administration",
-#                                          command=lambda: display_dataframe("Public administration"))
-# button_of_public_administration.grid(row=0, column=8)
-#
-# quit_button = Button(frame, text="Close the program", command=lambda: root.destroy(), bg='light yellow')
-# quit_button.grid(row=3, column=4)
-# # The quit button
-#
-#
-# def display_dataframe(industry: str) -> None:
-#     """
-#     Display the DataFrame to the tkinter window, depending on which button was pressed
-#     """
-#     global canvas, bottomframe
-#
-#     if canvas:  # Removing the existing graph (if there is any)
-#         bottomframe.destroy()
-#         bottomframe = Frame(root)
-#         bottomframe.pack(side=BOTTOM)
-#
-#     # Generating the figure and a canvas to display it
-#     figure = proj3.create_table(industry)
-#     canvas = FigureCanvasTkAgg(figure, master=bottomframe)
-#
-#     canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=True)  # Displaying the figure
-#
-#
-# root.mainloop()
+
+root = Tk()
+root.overrideredirect(True)
+root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))
+root.config(bg='#73C2FB')
+
+frame = Frame(root)
+frame.pack()
+frame.config(bg='#73C2FB')
+
+bottomframe = Frame(root)
+bottomframe.pack(side=LEFT)
+
+canvas = None
+
+button_of_agriculture = Button(frame, text="Agriculture",
+                               command=lambda: display_dataframe("Agriculture"))
+button_of_agriculture.grid(row=0, column=0)     # Placing the buttons on the screen
+
+button_of_FFMQOG = Button(frame, text="Forestry, Fishing, Mining, Quarrying, Oil and Gas",
+                          command=lambda: display_dataframe("Forestry, fishing, mining, quarrying, oil and gas"))
+button_of_FFMQOG.grid(row=0, column=1)
+
+button_of_construction = Button(frame, text="Construction",
+                                command=lambda: display_dataframe("Construction"))
+button_of_construction.grid(row=0, column=2)
+
+button_of_wholesale = Button(frame, text="Wholesale and Retail Trade",
+                             command=lambda: display_dataframe("Wholesale and retail trade"))
+button_of_wholesale.grid(row=0, column=3)
+
+button_of_transportation_and_warehousing = Button(frame, text="Transportation and Warehousing",
+                                                  command=lambda: display_dataframe("Transportation and warehousing"))
+button_of_transportation_and_warehousing.grid(row=0, column=4)
+
+button_of_edicational_services = Button(frame, text="Education",
+                                        command=lambda: display_dataframe("Educational services"))
+button_of_edicational_services.grid(row=0, column=5)
+
+button_of_health_care = Button(frame, text="Health Care and Social Assistance",
+                               command=lambda: display_dataframe("Health care and social assistance"))
+button_of_health_care.grid(row=0, column=6)
+
+button_of_accomodation_and_food = Button(frame, text="Accommodation and Food Services",
+                                         command=lambda: display_dataframe("Accommodation and food services"))
+button_of_accomodation_and_food.grid(row=0, column=7)
+
+button_of_public_administration = Button(frame, text="Public Administration",
+                                         command=lambda: display_dataframe("Public administration"))
+button_of_public_administration.grid(row=0, column=8)
+
+quit_button = Button(frame, text="Close the program", command=lambda: root.destroy(), bg='light yellow')
+quit_button.grid(row=3, column=4)
+# The quit button
+
+
+def display_dataframe(industry: str) -> None:
+    """
+    Display the DataFrame to the tkinter window, depending on which button was pressed
+    """
+    global canvas, bottomframe
+
+    if canvas:  # Removing the existing graph (if there is any)
+        bottomframe.destroy()
+        bottomframe = Frame(root)
+        bottomframe.pack(side=BOTTOM)
+
+    # Generating the figure and a canvas to display it
+    figure = proj3.create_table(industry)
+    canvas = FigureCanvasTkAgg(figure, master=bottomframe)
+
+    canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=True)  # Displaying the figure
+
+
+root.mainloop()
