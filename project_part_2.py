@@ -12,6 +12,7 @@ pre_pandemic_data = p.read_csv('Datasets/pre_pandemic.csv')
 during_the_pandemic_data = p.read_csv('Datasets/during_the_pandemic (1).csv')
 # (Change the input string if the file names or the folder names are different.)
 
+
 def create_dataframe(industry: str, time_frame: str) -> p.DataFrame:
     """
     Create and return a new pandas dataframe
@@ -27,7 +28,6 @@ def create_dataframe(industry: str, time_frame: str) -> p.DataFrame:
     # Creating a new DataFrame where rows and columns are 0-indexed by default
     new_dataframe = p.DataFrame(columns=["Industry", "Time Frame", "Pre-Pandemic Value", "Value During the Pandemic",
                                          "Increase- Decrease", "Percentage of Increase - Decrease"], index=["values"])
-
 
     industry_name = industry.split(' ')
     industry_name_fixed = [industry_name[0]]
@@ -61,8 +61,13 @@ def create_dataframe(industry: str, time_frame: str) -> p.DataFrame:
     dates = list(dates_to_indexes.keys())
 
     # The iloc[:, :] function allows us to access specific values from the DataFrame by their indexes.
-    # The first parameter, which is the rows,  takes 2 integers separated by a colon (:) and gives out that part of the data frame. The end point is exclusive.
-    # The second parameter, which is the colums,  takes 2 integers separated by a colon (:) and gives out that part of the data frame. The end point is exclusive.
+
+    # The first parameter, which is the rows,  takes 2 integers separated by a colon (:)
+    # and gives out that part of the data frame. The end point is exclusive.
+
+    # The second parameter, which is the colums,  takes 2 integers separated by a colon (:)
+    # and gives out that part of the data frame. The end point is exclusive.
+
     # For example iloc[4 : 7, 3 : 14] would return the rows 4, 5 and 6; the columns from 3 up to but not including 14.
 
     new_dataframe["Time Frame"] = dates[dates_to_indexes[time_frame]]  # Modifying the "timeframe" column
@@ -106,7 +111,7 @@ def create_table(industry: str, time_frame: str) -> Figure:
 
     figure, tables = plot.subplots(facecolor='#73C2FB')
     tables.set_axis_off()
-    table =tables.table(
+    table = tables.table(
         cellText=[numerics],
         rowLabels=None,
         colLabels=values,
@@ -160,7 +165,3 @@ if __name__ == '__main__':
         'disable': ['R1705', 'C0200']
     }                
     )
-    
-
-
-
