@@ -22,6 +22,7 @@ def create_dataframe(industry: str) -> p.DataFrame:
     
     Preconditions:
         - industry in proj1.industry_and_its_index
+
     """
     new_dataframe = p.DataFrame(columns=["Industry", "Pre-Pandemic Average",
                                          "Average During the Pandemic"], index=["values"])
@@ -66,6 +67,10 @@ def create_dataframe(industry: str) -> p.DataFrame:
 def create_table_value(dataframe: p.DataFrame) -> list[tuple[str, float or str]]:
     """
     Returns the values of the dataframe as a list of tuples.
+
+    >>> data_frame = create_dataframe('Agriculture')
+    >>> create_table_value(data_frame)
+    [('Industry', 'Agriculture'), ('Pre-Pandemic Average', 43.3), ('Average During the Pandemic', 43.27)]
     """
     new_frame = dataframe.to_dict()
     
@@ -77,7 +82,11 @@ def create_table_value(dataframe: p.DataFrame) -> list[tuple[str, float or str]]
 
 
 def create_table(industry: str) -> Figure:
-    """Creates the table with the data"""
+    """Creates the table with the data
+
+    >>> create_table('Agriculture')
+    <Figure size 1600x1200 with 1 Axes>
+    """
 
     data = create_table_value(create_dataframe(industry))
     values = [data[i][0] for i in range(len(data))]
@@ -106,17 +115,15 @@ def create_table(industry: str) -> Figure:
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
-    
+
     import python_ta
     import python_ta.contracts
     python_ta.contracts.DEBUG_CONTRACTS = False
     python_ta.contracts.check_all_contracts()
     python_ta.check_all(config={
         'extra-imports': ['python_ta.contracts', 'pandas', 'matplotlib.pyplot', 'project_part_1'],
-        'max-line-length': 100,
+        'max-line-length': 121,
         'max-nested-blocks': 4,
         'disable': ['R1705', 'C0200']
-    }                
+    }
     )
-    
-    
