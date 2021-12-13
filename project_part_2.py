@@ -144,6 +144,7 @@ def plotting_the_table(data: p.DataFrame) -> None:
 
     center.axis("off")
 
+
 if __name__ == '__main__':
     import doctest
     doctest.testmod()

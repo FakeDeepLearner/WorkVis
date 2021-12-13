@@ -102,6 +102,7 @@ def create_table(industry: str) -> Figure:
 
     return figure
 
+
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
