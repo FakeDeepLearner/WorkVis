@@ -5,7 +5,8 @@ from before the pandemic (2019) and during the pandemic (2020) the two year will
 to 2 different graphs and the x-axis will represent the average working hour while the y-axis
 will be representing in the form of year and month.
 
-This module contains all the necessary code to implement the first part of the project, and must be imported in the main.py file.
+This module contains all the necessary code to implement the first part of the project, and must be
+imported in the main.py file.
 
 """
 import matplotlib.pyplot as plot
@@ -14,7 +15,8 @@ from matplotlib.figure import Figure
 
 during_pandemic_data = p.read_csv('Datasets/during_the_pandemic (1).csv')   
 pre_pandemic_data = p.read_csv('Datasets/pre_pandemic.csv')
-# Gets the DataFrame from the csv dataset. (Change the input string if the file names or the folder names are different.)
+# Gets the DataFrame from the csv dataset. (Change the input string if the file names or the folder
+# names are different.)
 
 industry_and_its_index = {'Agriculture': 0,
                           'Forestry, fishing, mining, quarrying, oil and gas': 1,
@@ -35,6 +37,8 @@ def plotting_the_graph(industry: str) -> Figure:
 
     E.g: 'Educational services' -> 'Educational Services'
 
+    >>> plotting_the_graph('Agriculture')
+    <Figure size 1600x1200 with 2 Axes>
     """
 
     pre_pandemic_points = points_of_pre_pandemic(industry)
@@ -108,6 +112,20 @@ def plotting_the_graph(industry: str) -> Figure:
 def points_of_pre_pandemic(industry: str) -> list[tuple[int, int]]:
     """Returns the list of point from the dataset based on the chosen industry
         based on the average working hour and month before the pandemic
+
+    >>> points_of_pre_pandemic('Agriculture')
+    [('19-Jan', 40.2),\
+ ('19-Feb', 38.9),\
+ ('19-Mar', 40.7),\
+ ('19-Apr', 41.7),\
+ ('19-May', 47.5),\
+ ('19-Jun', 44.2),\
+ ('19-Jul', 44.0),\
+ ('19-Aug', 44.4),\
+ ('19-Sep', 47.6),\
+ ('19-Oct', 45.1),\
+ ('19-Nov', 43.8),\
+ ('19-Dec', 41.5)]
     """
     index = industry_and_its_index[industry]
     before_pandemic = pre_pandemic_data.loc[index].to_dict()
@@ -123,6 +141,21 @@ def points_of_pre_pandemic(industry: str) -> list[tuple[int, int]]:
 def points_of_during_pandemic(industry: str) -> list[tuple[int, int]]:
     """Returns the list of point from the dataset based on the chosen industry
         based on the average working hour and month during the pandemic
+
+    >>> points_of_during_pandemic('Agriculture')
+    [('20-Jan', 38.9),\
+ ('20-Feb', 39.0),\
+ ('20-Mar', 41.2),\
+ ('20-Apr', 42.3),\
+ ('20-May', 48.8),\
+ ('20-Jun', 45.3),\
+ ('20-Jul', 42.7),\
+ ('20-Aug', 46.0),\
+ ('20-Sep', 49.5),\
+ ('20-Oct', 44.6),\
+ ('20-Nov', 42.0),\
+ ('20-Dec', 38.9)]
+
     """
     index = industry_and_its_index[industry]
     during_pandemic = during_pandemic_data.loc[index].to_dict()
@@ -134,20 +167,20 @@ def points_of_during_pandemic(industry: str) -> list[tuple[int, int]]:
 
     return during_pandemic_points
 
-
-if __name__ == '__main__':
-    import doctest
-    doctest.testmod()
-    
-    import python_ta
-    import python_ta.contracts
-    python_ta.contracts.DEBUG_CONTRACTS = False
-    python_ta.contracts.check_all_contracts()
-    python_ta.check_all(config={
-        'extra-imports': ['python_ta.contracts', 'pandas', 'matplotlib.pyplot', 'matplotlib.figure'],
-        'max-line-length': 100,
-        'max-nested-blocks': 4,
-        'disable': ['R1705', 'C0200']
-    }                
-    )
-    
+#
+# if __name__ == '__main__':
+#     import doctest
+#     doctest.testmod()
+#
+#     import python_ta
+#     import python_ta.contracts
+#     python_ta.contracts.DEBUG_CONTRACTS = False
+#     python_ta.contracts.check_all_contracts()
+#     python_ta.check_all(config={
+#         'extra-imports': ['python_ta.contracts', 'pandas', 'matplotlib.pyplot', 'matplotlib.figure'],
+#         'max-line-length': 121,
+#         'max-nested-blocks': 4,
+#         'disable': ['R1705', 'C0200']
+#     }
+#     )
+#
