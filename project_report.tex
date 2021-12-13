@@ -15,7 +15,7 @@ The Effect of COVID 19 in Working Hours in Different Industries Across Canada}
 \section*{Introduction}  
 The global effects of COVID-19 does not need much introduction. Without a doubt, the pandemic has impacted every aspect of our lives to some level. It caused many changes in the dynamics of how the world operates; some for the better, some for the worse.   
   
-One of the most affected markets was the job market. COVID changed a lot of things such as including how people work, what jobs they prefer, their work-life balance and so on. The goal of this project is to investigate what changes COVID-19 caused in the working hours of the industries in Canada. That is, how was the state of the working hours before the pandemic (defined as January-December 2019) and during the pandemic (defined as January 2020- December 2020).  
+One of the most affected markets was the job market. COVID changed a lot of things such as including how people work, what jobs they prefer, their work-life balance, and so on. The goal of this project is to investigate what changes COVID-19 caused in the working hours of the industries in Canada. That is, how was the state of the working hours before the pandemic (defined as January-December 2019) and during the pandemic (defined as January 2020- December 2020).  
   
 The question we seek to answer is:   
 \textbf{``How has COVID-19 affected the working hours of specific Canadian industries?"}  
@@ -37,25 +37,24 @@ Our Project is divided into 3 python files that each have a specific function.
 
 \medskip   
 
-\textbf{project\_part 1:} The purpose here is to plot the graph according to the selected industry regarding the data from before the pandemic (2019) and during the pandemic (2020) the two year will correspond o 2 different graphs and the x-axis will represent the average working hour while the y-axis
-will be representing in the form of year and month. By creating line graphs for each industry before and during the pandemic, we illustrate their general pattern, i.e  much they tend to change over the course of each month. 
+\textbf{project\_part 1:} The purpose here is to plot the graph according to the selected industry regarding the data from before the pandemic (2019) and during the pandemic (2020) the two years will correspond to 2 different graphs and the x-axis will represent the average working hour while the y-axis
+will be represented in the form of year and month. By creating line graphs for each industry before and during the pandemic, we illustrate their general pattern, i.e how much they tend to change over the course of each month. 
 
 \medskip 
 
 
-first, the function will use the pandas library and use the read\_csv method to create the DataFrame from the csv dataset. our program then stores this in
+First, the function will use the pandas library and use the read\_csv method to create the DataFrame from the csv dataset. Our program then stores this in
 two variables.
-We then created dictionary that map each industry  to the following data set from the DataFrame.
+We then created a dictionary that maps each industry to the following data set from the DataFrame.
 
 
 we then created 2 small helper functions called points\_of\_during\_pandemic
-and points\_of\_pre\_pandemic. They work by creating the list of points from the dataset based on the chosen industry's average working hours and month before the pandemic for \_of\_pre\_pandemic or after the pandemic for points\_of\_during\_pandemic
+and points\_of\_pre\_pandemic. They work by creating the list of points from the dataset based on the chosen industry's average working hours and the month before the pandemic for \_of\_pre\_pandemic or after the pandemic for points\_of\_during\_pandemic
 
 Our main function is called plotting\_the\_graph. Its a rather complex algorithm that incorporates 3 for loops and many functions from the matplotlib that creates a graph based on the industry chosen. Unlike many simpler implementations of graphs using matplotlib, in the function, the name will be changed so that all word will capitalize their first letter for every industry to make the output look more polished and professional.
 
-This function works by first Getting the list of coordinates of the chosen industry by using helper functions. The the If the first alphabet of the word is lower cased. If it is, then the for loop changes it to upper case,the first word of the industry should always have an uppercase letter.
+This function works by first Getting the list of coordinates of the chosen industry by using helper functions. The if statemnet evaluates if the first alphabet of the word is lower cased. If it is, then the for loop changes it to upper case,the first word of the industry should always have an uppercase letter.
 
-%Im gonna skip taking about the accumulators%
 
 then this function uses matplotlib functions to set up the correct parameters for the graph by using the matplotlib.plot, matplotlib.sub\_plot, matplotlib.setgp and more, we can create a graph with labels that start with a uppercase letter, thanks to the for loop that we created
 
@@ -63,17 +62,17 @@ then this function uses matplotlib functions to set up the correct parameters fo
 
 \textbf{project\_part 2.}
 
-In this part created a function that created doing tables showing how much the working hours changed both in numbers and in percentages. For example, a table will the working hours of an industry for January 2019 and January 2020, and then will include how much the working hours changed in numbers and in percentages. This will allow us to make an estimate of how much popularity the industry gained or lost with the introduction of the pandemic,
+In this part, we created a function that created doing tables showing how much the working hours changed both in numbers and in percentages. For example, a table will the working hours of an industry for January 2019 and January 2020, and then will include how much the working hours changed in numbers and in percentages. This will allow us to make an estimate of how much popularity the industry gained or lost with the introduction of the pandemic,
 
 We started by importing the dictionary we created in part 1
 
-first, the function will use the pandas library and use the read\_csv method to create the DataFrame from the csv dataset. our program then stores this in
+first, the function will use the Pandas library and use the read\_csv method to create the DataFrame from the CSV dataset. our program then stores this in
 two variables.
-We then created dictionary that map each industry  to the following data set from the DataFrame.
+We then createda  dictionary that maps each industry to the following data set from the DataFrame.
 
-We then created a function called create\_dataframe which creates a datadrame using the imported dictionary. the DataFrame where rows and columns are 0-indexed by default. we the use the same for loop from part in which the first letters are all capitalised.
+We then created a function called create\_dataframe which creates a DataFrame using the imported dictionary. the DataFrame where rows and columns are 0-indexed by default. we the use the same for loop from part in which the first letters are all capitalised.
 
-(will add more I'm thinking about shortening this part)
+
 
 
 
@@ -85,7 +84,7 @@ in part 3.
 
 the goal of part 3 is to Calculating the differences of the yearly averages of working hours for each industry pre pandemic and during the pandemic. This will allow us to further illustrate the sectors that gained or lost popularity, or stated relatively neutral. If our result is positive, we can say that the industry gained popularity with how much it gained popularity depending on the magnitude of our result, and vice versa.
   
- (will add code analysis later)
+
   
 \section*{Instructions} 
  
@@ -106,25 +105,25 @@ We received mostly positive feedback from the TAs after we submitted our proposa
 
 Firstly, we decided to omit part 4 of the proposal entirely, as we decided it was not really feasible to implement it in python, and we felt it would do more harm than good because it brought no new results. \\
  
-Secondly, and most importantly, we narrowed down the subjects of our project to 9 industries, rather than the previous 18.  The  reason why we chose these specific ones is that, we decided that we should choose industries that we could have a reasonable guess about how they performed, to more realiably compare our intuition with our actual findings. For example, we decided that educational services should be one of the industries because we were able to reasonably think that since education went online, nothing much would change. Similarly, we expected that forestry, fishing, mining, quarrying, oil and gas would stay relatively the same as well, since natural resources are a big part of the Canadian economy. (Crude oil is Canada's top export, generating 69 Billion USD of revenue in 2020).\\
+Secondly, and most importantly, we narrowed down the subjects of our project to 9 industries, rather than the previous 18.  The  reason why we chose these specific ones is that, we decided that we should choose industries that we could have a reasonable guess about how they performed, to more reliably compare our intuition with our actual findings. For example, we decided that educational services should be one of the industries because we were able to reasonably think that since education went online, nothing much would change. Similarly, we expected that forestry, fishing, mining, quarrying, oil and gas would stay relatively the same as well, since natural resources are a big part of the Canadian economy. (Crude oil is Canada's top export, generating 69 Billion USD of revenue in 2020).\\
 
 \section*{Discussion} 
 
-The functions that we created helped to further explore various modules as well as provide insights into the affects of Covid-19 using empirical data. By implementing functions in our project, we have accurately answered our original question on How has COVID-19 affected the working hours of specific Canadian industries? In part 1 of our project the functions we created 2 graphs according to the selected industry regarding the data
+The functions that we created helped to further explore various modules as well as provide insights into the effects of Covid-19 using empirical data. By implementing functions in our project, we have accurately answered our original question on ''How has COVID-19 affected the working hours of specific Canadian industries?"". In part 1 of our project, the functions we created 2 graphs according to the selected industry regarding the data
 from before the pandemic (2019) and during the pandemic (2020) with the x-axis will represent the average working hour while the y-axis
-will be representing in the form of year and month. Through the data we saw that for nearly every month in 2020, the reported working hours were less then the year before, which was before the global pandemic. This trend is very obvious as shown in our interactive GUI. Some industries show a greater change in hours than others by simply looking at the height differences in the bars. Some examples include accommodation and food services. In part 2 and 3 we expanded upon this idea and included functions that would calculate the percentage difference in the average working hours during and before the pandemic. This percentage difference clearly demonstrated a change between the two years which is solid proof that the pandemic did affect the report work hours.  (might add some more?)
+will be represented in the form of year and month. Through the data, we saw that for nearly every month in 2020, the reported working hours were less than the year before, which was before the global pandemic. This trend is very obvious as shown in our interactive GUI. Some industries show a greater change in hours than others by simply looking at the height differences in the bars. Some examples include accommodation and food services. In parts 2 and 3 we expanded upon this idea and included functions that would calculate the percentage difference in the average working hours during and before the pandemic. This percentage difference clearly demonstrated a change between the two years which is solid proof that the pandemic did affect the report work hours. 
 
 
 \medskip
 
 
-We did run into some minor limitations specifically with calculating the percentage change in different industries. we found it very difficult to create a table using mathplotlib directly from data frame values. We even seriously considered using another libraries  to create the table. Mathplotlib is mainly used for graphing and not really created for just creating tables with an accompanying graph. We eventually found a solution without using additional libraries. We eventually found a solution through trial and error that worked by creating a helper function that turned the data frame values into a list of tuples to be processed instead of a data frame value. The solution worked and this small helper function is an integral part of our part 2 implementation.
+We did run into some minor limitations specifically with calculating the percentage change in different industries. we found it very difficult to create a table using mathplotlib directly from data frame values. We even seriously considered using other libraries  to create the table. Mathplotlib is mainly used for graphing and not really created for just creating tables with an accompanying graph. We eventually found a solution without using additional libraries. We eventually found a solution through trial and error that worked by creating a helper function that turned the data frame values into a list of tuples to be processed instead of a data frame value. The solution worked and this small helper function is an integral part of our part 2 implementation.
 
-Another small issue that we encountered was finding the right axis sizes and labels to make our GUI look as ascetically pleasing as possible. We experimented with various colors and sizes but we noticed that not all of the words in the visualizations was capitalised. Users would see labels such as ``Educational services" instead of ``Educational Services" so we created a unique for loop that iterates through every label and ensures that every word is capitalise.
+Another small issue that we encountered was finding the right axis sizes and labels to make our GUI look as ascetically pleasing as possible. We experimented with various colors and sizes but we noticed that not all of the words in the visualizations were capitalised. Users would see labels such as ``Educational services" instead of ``Educational Services" so we created a unique for loop that iterates through every label and ensures that every word is capitalised.
 
 \medskip
 
-Our next steps will be expanding our comparison program to compare the differences in working hours between any two years rather than just 2019 and 2020. This will require a considerable amount of modification to our code as it some functions only take values from January to December of only 2020 or 2019. If we can make further modifications to the code to expand the years that we can analyse, we can make even more insights and attempt to see if there is a pattern of increasing or decreasing  work hours over a range of years. This information can be used to forecast the future job market which in turn could be used to forecast the future economy which is important for government policy makers for various reasons such as increasing or decreasing the mortgage rate to simulate the economy.
+Our next steps will be expanding our comparison program to compare the differences in working hours between any two years rather than just 2019 and 2020. This will require a considerable amount of modification to our code as it some functions only take values from January to December of only 2020 or 2019. If we can make further modifications to the code to expand the years that we can analyse, we can make even more insights and attempt to see if there is a pattern of increasing or decreasing  work hours over a range of years. This information can be used to forecast the future job market which in turn could be used to forecast the future economy which is important for government policymakers for various reasons such as increasing or decreasing the mortgage rate to simulate the economy.
 
 Jobs are an integral part of not only of economy, but also our society through our insights into the differences in working hours across different industries we have learned the importance of proper programming skills, government systems, and data acquisition. These skills will not only aid in our university journey, but also beyond university where we will use these skills to create change.
 
