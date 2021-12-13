@@ -5,4 +5,5 @@ pandas == 1.3.3
 tkinter == 8.6
 
 # Testing and code checking
-python-ta
+python-ta = 2.0.0
+doctest
