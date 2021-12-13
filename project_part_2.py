@@ -144,6 +144,22 @@ def plotting_the_table(data: p.DataFrame) -> None:
 
     center.axis("off")
 
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
+    
+    import python_ta
+    import python_ta.contracts
+    python_ta.contracts.DEBUG_CONTRACTS = False
+    python_ta.contracts.check_all_contracts()
+    python_ta.check_all(config={
+        'extra-imports': ['python_ta.contracts', 'pandas', 'matplotlib.pyplot', 'project_part_1', 'matplotlib.figure'],
+        'max-line-length': 100,
+        'max-nested-blocks': 4,
+        'disable': ['R1705', 'C0200']
+    }                
+    )
+    
 
 
 

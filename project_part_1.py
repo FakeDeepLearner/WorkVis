@@ -133,3 +133,20 @@ def points_of_during_pandemic(industry: str) -> list[tuple[int, int]]:
         during_pandemic_points.append((month, during_pandemic[month]))
 
     return during_pandemic_points
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
+    
+    import python_ta
+    import python_ta.contracts
+    python_ta.contracts.DEBUG_CONTRACTS = False
+    python_ta.contracts.check_all_contracts()
+    python_ta.check_all(config={
+        'extra-imports': ['python_ta.contracts', 'pandas', 'matplotlib.pyplot', 'matplotlib.figure'],
+        'max-line-length': 100,
+        'max-nested-blocks': 4,
+        'disable': ['R1705', 'C0200']
+    }                
+    )
+    
