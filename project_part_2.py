@@ -92,7 +92,19 @@ def create_dataframe(industry: str, time_frame: str) -> p.DataFrame:
 
 
 def create_table_value(df: p.DataFrame) -> list[tuple[str, float]]:
-    """Returns the value of a DataFrame into a list of tuples"""
+    """Returns the value of a DataFrame into a list of tuples
+
+    >>> values = create_dataframe('Agriculture', 'January 2019- 20')
+    >>> create_table_value(values)
+    [('Industry', 'Agriculture'),\
+ ('Time Frame', 'January 2019- 20'),\
+ ('Pre-Pandemic Value', 40.2),\
+ ('Value During the Pandemic', 38.9),\
+ ('Increase- Decrease', -1.3),\
+ ('Percentage of Increase - Decrease', '-3.23%')]
+
+
+    """
     df_to_dict = df.to_dict()
 
     data_list = []
@@ -103,7 +115,11 @@ def create_table_value(df: p.DataFrame) -> list[tuple[str, float]]:
 
 
 def create_table(industry: str, time_frame: str) -> Figure:
-    """Creates the table with the data"""
+    """Creates the table with the data
+
+    >>> create_table('Agriculture', 'January 2019- 20')
+    <Figure size 1600x1200 with 1 Axes>
+    """
 
     data = create_table_value(create_dataframe(industry, time_frame))
     values = [data[i][0] for i in range(len(data))]
@@ -129,39 +145,19 @@ def create_table(industry: str, time_frame: str) -> Figure:
     return figure
 
 
-def plotting_the_table(data: p.DataFrame) -> None:
-    """Creates table with data from create_dataframe"""
-    
-    values = data.values
-    # creates an array of values from dataframe
-
-    column_labels = ['Industry', 'date', 'Pre Pandemic Value', 'Pandemic Value',
-                     'Difference in revenue in Billions of Dollars' 'Percentage change']
-    row_labels = ['Values']
-    table_values = values
-    # having some issues with turning the specific datatype from create_dataframe to a table as the most simple numpy
-    # datatype is int64  but create_datafurns a type 0rame ret datatype. I will figure it out by tomorrow
-
-    center = plot.subplot2grid((2, 2), (0, 0), colspan=3, rowspan=4)
-    center.table(cellText=table_values,
-                 rowLabels=row_labels,
-                 colLabels=column_labels, loc="lower center")
-
-    center.axis("off")
-
-
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
-    
+
     import python_ta
     import python_ta.contracts
     python_ta.contracts.DEBUG_CONTRACTS = False
     python_ta.contracts.check_all_contracts()
     python_ta.check_all(config={
-        'extra-imports': ['python_ta.contracts', 'pandas', 'matplotlib.pyplot', 'project_part_1', 'matplotlib.figure'],
-        'max-line-length': 100,
+        'extra-imports': ['python_ta.contracts', 'pandas', 'matplotlib.pyplot', 'project_part_1',
+        'matplotlib.figure'],
+        'max-line-length': 121,
         'max-nested-blocks': 4,
         'disable': ['R1705', 'C0200']
-    }                
+    }
     )
