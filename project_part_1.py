@@ -13,7 +13,7 @@ import matplotlib.pyplot as plot
 import pandas as p
 from matplotlib.figure import Figure
 
-during_pandemic_data = p.read_csv('Datasets/during_the_pandemic (1).csv')   
+during_pandemic_data = p.read_csv('Datasets/during_the_pandemic (1).csv')
 pre_pandemic_data = p.read_csv('Datasets/pre_pandemic.csv')
 # Gets the DataFrame from the csv dataset. (Change the input string if the file names or the folder
 # names are different.)
@@ -183,4 +183,4 @@ if __name__ == '__main__':
         'disable': ['R1705', 'C0200']
     }
     )
-
+    

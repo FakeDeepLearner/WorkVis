@@ -3,8 +3,9 @@ This module contains the code required to operate the second part of the project
 """
 import matplotlib.pyplot as plot
 import pandas as p
-import project_part_1 as proj1
 from matplotlib.figure import Figure
+import project_part_1 as proj1
+
 
 industries_and_indexes = proj1.industry_and_its_index  # The dictionary corresponding to the industries
 
@@ -155,7 +156,7 @@ if __name__ == '__main__':
     python_ta.contracts.check_all_contracts()
     python_ta.check_all(config={
         'extra-imports': ['python_ta.contracts', 'pandas', 'matplotlib.pyplot', 'project_part_1',
-        'matplotlib.figure'],
+                        'matplotlib.figure'],
         'max-line-length': 121,
         'max-nested-blocks': 4,
         'disable': ['R1705', 'C0200']

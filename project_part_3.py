@@ -1,5 +1,5 @@
 """
-  This module contains all of the required code to run the third part of the project  
+  This module contains all of the required code to run the third part of the project
 """
 
 import pandas as p
@@ -19,7 +19,7 @@ industries_and_indexes = proj1.industry_and_its_index
 def create_dataframe(industry: str) -> p.DataFrame:
     """
     Create and return a pandas DataFrame with the necessary data
-    
+
     Preconditions:
         - industry in proj1.industry_and_its_index
 
@@ -51,18 +51,18 @@ def create_dataframe(industry: str) -> p.DataFrame:
 
     pre_pandemic_total = 0
     during_the_pandemic_total = 0
-    
+
     # Accumulating the sum of the necessary row, decided by the industry passed in.
     for col_num in range(1, 13):
         # There are a total of 12 rows, representing each month
         pre_pandemic_total += float(pre_pandemic_data.iloc[industries_and_indexes[industry], col_num])
         during_the_pandemic_total += float(during_the_pandemic_data.iloc[industries_and_indexes[industry], col_num])
-    
+
     new_dataframe["Pre-Pandemic Average"] = round(pre_pandemic_total / 12, 2)
     new_dataframe["Average During the Pandemic"] = round(during_the_pandemic_total / 12, 2)
 
     return new_dataframe
-    
+
 
 def create_table_value(dataframe: p.DataFrame) -> list[tuple[str, float or str]]:
     """
@@ -73,11 +73,11 @@ def create_table_value(dataframe: p.DataFrame) -> list[tuple[str, float or str]]
     [('Industry', 'Agriculture'), ('Pre-Pandemic Average', 43.3), ('Average During the Pandemic', 43.27)]
     """
     new_frame = dataframe.to_dict()
-    
+
     data_list = []
     for item in new_frame:
         data_list.append((item, new_frame[item]['values']))
-    
+
     return data_list
 
 
@@ -121,7 +121,7 @@ if __name__ == '__main__':
     python_ta.contracts.DEBUG_CONTRACTS = False
     python_ta.contracts.check_all_contracts()
     python_ta.check_all(config={
-        'extra-imports': ['python_ta.contracts', 'pandas', 'matplotlib.pyplot', 'project_part_1'],
+        'extra-imports': ['python_ta.contracts', 'pandas', 'matplotlib.pyplot', 'project_part_1', 'matplotlib.figure'],
         'max-line-length': 121,
         'max-nested-blocks': 4,
         'disable': ['R1705', 'C0200']
